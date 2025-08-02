@@ -12,6 +12,7 @@ body {
   font-family: "Raleway", sans-serif;
   background: #fef9e4;
   color: #19633a;
+  font-size: 16px;
 }
 
 h1,
@@ -60,6 +61,7 @@ a,
   width: 100px;
 }
 
+/* Navbar Links */
 .navbar-container a {
   position: relative;
   text-decoration: none;
@@ -71,57 +73,64 @@ a,
   font-weight: 500;
 }
 
-.navbar-container a::before,
-.navbar-container a::after,
-.navbar-container a span::before,
-.navbar-container a span::after {
+/* Remove padding for logo link */
+.navbar-container a.logo-link {
+  padding: 0;
+}
+
+/* Hover animation ONLY for non-logo links */
+.navbar-container a:not(.logo-link)::before,
+.navbar-container a:not(.logo-link)::after,
+.navbar-container a:not(.logo-link) span::before,
+.navbar-container a:not(.logo-link) span::after {
   content: "";
   position: absolute;
   background: #fef9e4;
   transition: all 0.4s ease;
 }
 
-.navbar-container a::before {
+.navbar-container a:not(.logo-link)::before {
   top: 0;
   left: 0;
   height: 1px;
   width: 0;
 }
 
-.navbar-container a::after {
+.navbar-container a:not(.logo-link)::after {
   top: 0;
   left: 0;
   width: 1px;
   height: 0;
 }
 
-.navbar-container a span::before {
+.navbar-container a:not(.logo-link) span::before {
   bottom: 0;
   right: 0;
   height: 3px;
   width: 0;
 }
 
-.navbar-container a span::after {
+.navbar-container a:not(.logo-link) span::after {
   bottom: 0;
   right: 0;
   width: 3px;
   height: 0;
 }
 
-.navbar-container a:hover::before {
+/* Hover States */
+.navbar-container a:not(.logo-link):hover::before {
   width: 100%;
 }
 
-.navbar-container a:hover::after {
+.navbar-container a:not(.logo-link):hover::after {
   height: 100%;
 }
 
-.navbar-container a:hover span::before {
+.navbar-container a:not(.logo-link):hover span::before {
   width: 100%;
 }
 
-.navbar-container a:hover span::after {
+.navbar-container a:not(.logo-link):hover span::after {
   height: 100%;
 }
 
@@ -229,7 +238,7 @@ a,
 
 /* Products */
 .featured-products {
-  background: #fef9e4;
+  background: #19633a;
   padding: 4rem 2rem;
   text-align: center;
   display: flex;
@@ -239,11 +248,13 @@ a,
 
 .section-heading h2 {
   font-size: 2.2rem;
+  color: #fef9e4;
   margin-bottom: 0.5rem;
 }
 
 .section-heading p {
   margin-bottom: 2rem;
+  color: #fef9e4;
 }
 
 .products-container {
@@ -256,7 +267,7 @@ a,
 
 .product-card {
   background: #fef9e4;
-  border: 2px solid #19633a;
+  border: 2px solid #fef9e4;
   border-radius: 16px;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -268,7 +279,7 @@ a,
   display: block;
   margin: 0;
   padding: 0;
-  border: none; /* Let parent handle borders */
+  border: none;
 }
 
 .product-card:hover {
@@ -290,12 +301,34 @@ a,
   margin: 1rem 0;
 }
 
+.view-all-btn .btn {
+  background: #fef9e4;
+  color: #19633a;
+  border: 2px solid #fef9e4;
+  font-weight: bold;
+  padding: 0.8rem 1.8rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.view-all-btn .btn:hover {
+  background: transparent;
+  color: #fef9e4;
+  border: 2px solid #fef9e4;
+}
+
 /* USP Section */
 .usp-section {
-  background: #19633a;
+  background: #fef9e4;
   padding: 4rem 2rem;
   text-align: center;
-  color: #fef9e4;
+  color: #19633a;
+}
+
+.usp-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #19633a;
 }
 
 .usp-container {
@@ -309,7 +342,7 @@ a,
 .usp-icon {
   width: 80px;
   height: 80px;
-  border: 2px solid #fef9e4;
+  border: 2px solid #19633a;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -321,7 +354,7 @@ a,
 
 /* Export Process */
 .export-process {
-  background: #fef9e4;
+  background: #19633a;
   padding: 4rem 2rem;
   text-align: center;
   width: 100%;
@@ -330,7 +363,7 @@ a,
 .process-timeline {
   display: flex;
   justify-content: center;
-  align-items: stretch; /* Equal height */
+  align-items: stretch;
   gap: 1.5rem;
   width: 100%;
   overflow-x: auto;
@@ -338,12 +371,12 @@ a,
 }
 
 .process-step {
-  background: #19633a;
-  border: 2px solid #fef9e4;
+  background: #fef9e4;
+  border: 2px solid #19633a;
   border-radius: 16px;
   padding: 2rem 1.5rem;
   text-align: center;
-  color: #fef9e4;
+  color: #19633a;
   max-width: 260px;
   transition: transform 0.3s ease;
   display: flex;
@@ -358,8 +391,8 @@ a,
 
 .process-step i {
   font-size: 1.5rem;
-  color: #fef9e4;
-  border: 5px double #fef9e4;
+  color: #19633a;
+  border: 5px double #19633a;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -376,6 +409,12 @@ a,
   text-align: center;
 }
 
+.blog-preview h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #19633a;
+}
+
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -385,8 +424,9 @@ a,
 }
 
 .blog-card {
-  background: #fef9e4;
-  border: 2px solid #19633a;
+  background: #19633a;
+  color: #fef9e4;
+  border: 2px solid #fef9e4;
   border-radius: 16px;
   overflow: hidden;
   text-align: left;
@@ -401,12 +441,29 @@ a,
   padding: 1rem;
 }
 
-.blog-content a {
-  color: #19633a;
-  text-decoration: none;
-  font-weight: bold;
+.blog-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
+.blog-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.blog-content a {
+  color: #fef9e4;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.hover-underline:hover {
+  text-decoration: underline;
+  opacity: 0.5;
+}
+
+/* CTA Footer */
 .cta-footer {
   background-color: #19633a;
   color: #fef9e4;
@@ -463,6 +520,7 @@ a,
   color: #19633a;
 }
 
+/* Footer */
 .site-footer {
   background-color: #19633a;
   color: #fef9e4;
@@ -536,98 +594,13 @@ a,
   border-top: 1px solid rgba(254, 249, 228, 0.2);
   padding-top: 1rem;
 }
+
 .footer-divider-line {
   height: 2px;
   background-color: #fef9e4;
   width: 60%;
   margin: 0 auto;
   opacity: 0.2;
-}
-/* ---------- Tablet (≥768px) ---------- */
-@media (min-width: 768px) {
-  .about-container {
-    flex-direction: row;
-    text-align: left;
-  }
-
-  .hero-content h1 {
-    font-size: 3.5rem;
-  }
-
-  .hero-content p {
-    font-size: 1.7rem;
-  }
-
-  .cta-footer h2 {
-    font-size: 2.5rem;
-  }
-
-  .cta-footer p {
-    font-size: 1.2rem;
-  }
-}
-
-/* ---------- Small Laptop (≥1024px) ---------- */
-@media (min-width: 1024px) {
-  .navbar-container {
-    gap: 30px;
-  }
-
-  .usp-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .blog-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .footer-container {
-    flex-wrap: nowrap;
-  }
-}
-
-/* ---------- Desktop (≥1280px) ---------- */
-@media (min-width: 1280px) {
-  .about-container {
-    gap: 4rem;
-  }
-
-  .hero-content h1 {
-    font-size: 4rem;
-  }
-
-  .hero-content p {
-    font-size: 1.8rem;
-  }
-
-  .cta-footer .cta-buttons {
-    gap: 2rem;
-  }
-
-  .footer-container {
-    gap: 4rem;
-  }
-}
-
-/* ---------- Large Desktop / 2K (≥1536px) ---------- */
-@media (min-width: 1536px) {
-  .hero-content {
-    padding: 4rem;
-  }
-
-  .usp-icon {
-    width: 100px;
-    height: 100px;
-    font-size: 2.2rem;
-  }
-
-  .cta-footer h2 {
-    font-size: 2.8rem;
-  }
-
-  .footer-brand img {
-    width: 140px;
-  }
 }
 
 /* Hamburger styles */
@@ -645,7 +618,7 @@ a,
 .hamburger span {
   height: 4px;
   width: 100%;
-  background: #333;
+  background: #fef9e4;
   margin: 4px 0;
   border-radius: 2px;
   transition: 0.3s;
@@ -660,43 +633,222 @@ a,
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Responsive Navbar */
-@media (max-width: 900px) {
-  nav {
-    position: relative;
+/* ---------- Responsive Breakpoints ---------- */
+
+/* Very Small Mobiles (≤393px) */
+@media (max-width: 393px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding-top: 60px;
+    display: none;
+    background: #19633a;
+  }
+  .navbar-container.active {
+    display: flex;
+  }
+  .navbar-container li {
+    width: 100%;
+    border-bottom: 1px solid rgba(254, 249, 228, 0.2);
+  }
+  .navbar-container a {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+  }
+  #logo {
+    width: 80px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .about-container,
+  .products-container,
+  .usp-container,
+  .process-timeline,
+  .blog-grid,
+  .footer-container {
+    flex-direction: column !important;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .btn,
+  .btn-outline,
+  .btn-about {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Small Mobiles (394px - 420px) */
+@media (min-width: 394px) and (max-width: 420px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Tablets and Small Laptops (421px - 1024px) */
+@media (min-width: 421px) and (max-width: 1024px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+    padding-top: 60px;
+  }
+  .navbar-container.active {
+    display: flex;
   }
   .hamburger {
     display: flex;
-    position: absolute;
-    right: 16px;
-    top: 24px;
   }
-  .navbar-menu {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: #fff;
-    width: 220px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  .navbar-menu.active {
-    display: block;
-  }
-  .navbar-container {
+
+  .about-container,
+  .usp-container,
+  .footer-container {
     flex-direction: column;
-    padding: 0;
-    margin: 0;
+    text-align: center;
   }
-  .navbar-container li {
-    margin: 0;
-    border-bottom: 1px solid #eee;
-    text-align: right;
-    padding: 12px 24px;
+
+  .process-timeline {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
   }
-  #logo {
-    height: 40px;
-    margin-left: 16px;
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Standard Laptops (1025px - 1536px) */
+@media (min-width: 1025px) and (max-width: 1536px) {
+  .navbar-container {
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+  }
+  .hero-content h1 {
+    font-size: 3.2rem;
+  }
+  .hero-content p {
+    font-size: 1.4rem;
+  }
+
+  .about-container,
+  .usp-container,
+  .footer-container {
+    flex-direction: row;
+  }
+
+  .process-timeline {
+    flex-wrap: nowrap;
+    gap: 1.2rem;
+  }
+}
+
+/* Large Desktops (≥1536px) */
+@media (min-width: 1536px) {
+  .navbar-container {
+    gap: 40px;
+  }
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+  .hero-content p {
+    font-size: 1.6rem;
+  }
+  .btn,
+  .btn-outline,
+  .btn-about {
+    padding: 1rem 2.2rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Ultra-Wide Screens (≥1920px) */
+@media (min-width: 1920px) {
+  body {
+    font-size: 18px;
+  }
+  .hero-content h1 {
+    font-size: 4.5rem;
+  }
+  .hero-content p {
+    font-size: 1.8rem;
+  }
+  .about-container,
+  .usp-container,
+  .footer-container {
+    max-width: 1600px;
+    margin: auto;
+  }
+}
+
+/* Products Section */
+@media (max-width: 768px) {
+  .products-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .product-card {
+    width: 90%;
+    max-width: 320px;
+  }
+}
+
+/* Why Choose Us (USP Section) */
+@media (max-width: 768px) {
+  .usp-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+  }
+  .usp-icon {
+    margin-bottom: 0.8rem;
+  }
+}
+
+/* From Farm to Port (Export Process Section) */
+@media (max-width: 768px) {
+  .process-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    overflow: visible;
+  }
+  .process-step {
+    width: 90%;
+    max-width: 320px;
+    text-align: center;
+  }
+}
+@media (max-width: 393px) {
+  .products-container,
+  .usp-container,
+  .process-timeline {
+    gap: 1rem;
+  }
+  .product-card,
+  .process-step {
+    width: 95%;
+    max-width: 300px;
   }
 }

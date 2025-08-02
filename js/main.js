@@ -1,29 +1,35 @@
-// AOS Init
+// Initialize AOS
 AOS.init({
   duration: 800,
   once: true,
 });
 
-window.addEventListener("load", () => {
-  AOS.refresh();
-});
-
-// Hamburger menu toggle
-document.addEventListener("DOMContentLoaded", function () {
-  const hamburger = document.getElementById("hamburger-btn");
-  const menu = document.getElementById("navbar-menu");
-  hamburger.addEventListener("click", function () {
-    menu.classList.toggle("active");
-    hamburger.classList.toggle("active");
-  });
-});
-
-// Navbar shrink
+// Navbar shrink on scroll
+const navbar = document.querySelector(".navbar-container");
 window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar-container");
-  if (window.scrollY > 80) {
+  if (window.scrollY > 50) {
     navbar.classList.add("shrink");
   } else {
     navbar.classList.remove("shrink");
   }
+});
+
+// Mobile menu toggle (hamburger)
+const hamburger = document.getElementById("hamburger-btn");
+
+// Toggle menu on hamburger click
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navbar.classList.toggle("active");
+});
+
+// Close mobile menu when clicking on any link
+const navLinks = document.querySelectorAll(".navbar-container a");
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    if (navbar.classList.contains("active")) {
+      hamburger.classList.remove("active");
+      navbar.classList.remove("active");
+    }
+  });
 });
