@@ -147,10 +147,11 @@ a,
   height: 100vh;
   background: url("/assets/img/bg-img/bg-img-1.png") center/cover no-repeat;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   text-align: center;
   padding-top: 100px;
+  /* border: 5px solid red; */
 }
 
 .hero-content {
@@ -235,6 +236,15 @@ a,
   flex: 1; /* Both take equal space */
 }
 
+.about-text {
+  padding: 2rem;
+  color: #19633a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .about-text p {
   width: 100%; /* Remove the 50% here */
 }
@@ -242,8 +252,8 @@ a,
 .about-image img {
   width: 60%; /* Image fills its container */
   border-radius: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .about-text h2 {
