@@ -36,95 +36,109 @@ a,
   font-family: "Poppins", sans-serif;
 }
 
-/* ----------------- Navbar ----------------- */
-.navbar-container {
-  list-style: none;
+/* ----------------- Modern Navbar ----------------- */
+.navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 40px;
-  padding: 1rem;
-  background-color: #19633a;
+  background: #19633a;
+  padding: 1rem 2rem;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 
-.navbar-container.shrink {
-  padding: 0.5rem;
+.navbar.shrink {
+  padding: 0.5rem 2rem;
 }
 
-#logo {
-  width: 100px;
+.navbar .logo-link img {
+  width: 110px;
 }
 
-/* Navbar Links */
-.navbar-container a {
-  position: relative;
-  text-decoration: none;
+/* Nav links desktop */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
   color: #fef9e4;
-  padding: 0.8rem 1.8rem;
-  display: inline-block;
-  overflow: hidden;
+  text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
+  position: relative;
 }
 
-.navbar-container a.logo-link {
-  padding: 0;
-}
-
-/* Hover animation ONLY for non-logo links */
-.navbar-container a:not(.logo-link)::before,
-.navbar-container a:not(.logo-link)::after,
-.navbar-container a:not(.logo-link) span::before,
-.navbar-container a:not(.logo-link) span::after {
+/* Hover underline animation */
+.nav-links a::after {
   content: "";
   position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
   background: #fef9e4;
-  transition: all 0.4s ease;
+  transition: width 0.3s ease;
 }
 
-.navbar-container a:not(.logo-link)::before {
-  top: 0;
-  left: 0;
-  height: 1px;
-  width: 0;
+.nav-links a:hover::after {
+  width: 100%;
 }
-.navbar-container a:not(.logo-link)::after {
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 0;
+
+/* Toggle button for mobile */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
 }
-.navbar-container a:not(.logo-link) span::before {
-  bottom: 0;
-  right: 0;
+
+.nav-toggle span {
+  width: 26px;
   height: 3px;
-  width: 0;
-}
-.navbar-container a:not(.logo-link) span::after {
-  bottom: 0;
-  right: 0;
-  width: 3px;
-  height: 0;
+  background: #fef9e4;
+  border-radius: 2px;
+  transition: 0.3s;
 }
 
-/* Hover States */
-.navbar-container a:not(.logo-link):hover::before {
-  width: 100%;
-}
-.navbar-container a:not(.logo-link):hover::after {
-  height: 100%;
-}
-.navbar-container a:not(.logo-link):hover span::before {
-  width: 100%;
-}
-.navbar-container a:not(.logo-link):hover span::after {
-  height: 100%;
+/* Mobile Menu Overlay */
+@media (max-width: 900px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 75%;
+    background: #19633a;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.4s ease;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Animation for toggle button */
+  .nav-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 }
 
 /* ----------------- Hero ----------------- */
@@ -580,40 +594,6 @@ a,
   opacity: 0.2;
 }
 
-/* ----------------- Hamburger ----------------- */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.hamburger span {
-  height: 4px;
-  width: 100%;
-  background: #fef9e4;
-  margin: 4px 0;
-  border-radius: 2px;
-  transition: 0.3s;
-}
-
-.hamburger.active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
 /* ----------------- Responsive Breakpoints ----------------- */
 
 /* Buttons responsive fix */
@@ -638,30 +618,6 @@ a,
 
 /* Very Small Mobiles (≤393px) */
 @media (max-width: 393px) {
-  .navbar-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    padding-top: 60px;
-    display: none;
-  }
-  .navbar-container.active {
-    display: flex;
-  }
-  .navbar-container li {
-    width: 100%;
-    border-bottom: 1px solid rgba(254, 249, 228, 0.2);
-  }
-  .navbar-container a {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    text-align: left;
-  }
-  #logo {
-    width: 80px;
-  }
-
   .hero-content h1 {
     font-size: 1.8rem;
   }
@@ -683,19 +639,6 @@ a,
 
 /* Tablets and Small Laptops (≤1024px) */
 @media (max-width: 1024px) {
-  .navbar-container {
-    flex-direction: column;
-    align-items: flex-start;
-    display: none;
-    padding-top: 60px;
-  }
-  .navbar-container.active {
-    display: flex;
-  }
-  .hamburger {
-    display: flex;
-  }
-
   .about-container,
   .usp-container,
   .footer-container {
