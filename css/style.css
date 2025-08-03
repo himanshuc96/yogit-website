@@ -516,6 +516,10 @@ a,
   list-style: none;
 }
 
+.footer-links ul li {
+  margin: 10px 10px 10px 0;
+}
+
 .footer-links a {
   color: #fef9e4;
   text-decoration: none;
@@ -530,7 +534,27 @@ a,
 .social-icons {
   display: flex;
   gap: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  color: #fef9e4;
+  margin-top: 10px;
+}
+
+/* Social icons fix */
+.social-icons a {
+  color: #fef9e4; /* default icon color */
+  text-decoration: none; /* remove underline */
+}
+
+.social-icons a:visited {
+  color: #fef9e4; /* same color even after visited */
+}
+
+.social-icons a:hover {
+  color: #fbca30; /* hover color (yellowish) */
+}
+
+.social-icons a:active {
+  color: #fef9e4;
 }
 
 .footer-bottom {
