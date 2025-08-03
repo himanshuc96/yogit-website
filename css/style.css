@@ -1,7 +1,7 @@
-/* Font Imports */
+/* ----------------- Font Imports ----------------- */
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* Reset */
+/* ----------------- Reset ----------------- */
 * {
   padding: 0;
   margin: 0;
@@ -36,7 +36,7 @@ a,
   font-family: "Poppins", sans-serif;
 }
 
-/* Navbar */
+/* ----------------- Navbar ----------------- */
 .navbar-container {
   list-style: none;
   display: flex;
@@ -73,7 +73,6 @@ a,
   font-weight: 500;
 }
 
-/* Remove padding for logo link */
 .navbar-container a.logo-link {
   padding: 0;
 }
@@ -95,21 +94,18 @@ a,
   height: 1px;
   width: 0;
 }
-
 .navbar-container a:not(.logo-link)::after {
   top: 0;
   left: 0;
   width: 1px;
   height: 0;
 }
-
 .navbar-container a:not(.logo-link) span::before {
   bottom: 0;
   right: 0;
   height: 3px;
   width: 0;
 }
-
 .navbar-container a:not(.logo-link) span::after {
   bottom: 0;
   right: 0;
@@ -121,20 +117,17 @@ a,
 .navbar-container a:not(.logo-link):hover::before {
   width: 100%;
 }
-
 .navbar-container a:not(.logo-link):hover::after {
   height: 100%;
 }
-
 .navbar-container a:not(.logo-link):hover span::before {
   width: 100%;
 }
-
 .navbar-container a:not(.logo-link):hover span::after {
   height: 100%;
 }
 
-/* Hero */
+/* ----------------- Hero ----------------- */
 .hero-banner {
   position: relative;
   height: 100vh;
@@ -163,7 +156,7 @@ a,
   margin-bottom: 2rem;
 }
 
-/* Buttons */
+/* ----------------- Buttons ----------------- */
 .btn {
   background: #19633a;
   color: #fef9e4;
@@ -172,7 +165,6 @@ a,
   border: 2px solid #19633a;
   font-weight: bold;
   transition: 0.3s;
-  margin-top: 50px;
 }
 
 .btn:hover {
@@ -191,7 +183,30 @@ a,
   color: #19633a;
 }
 
-/* About */
+.btn-about {
+  background: #19633a;
+  color: #fef9e4;
+  padding: 0.8rem 1.8rem;
+  text-decoration: none;
+  border: 2px solid #19633a;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-about:hover {
+  background: #fef9e4;
+  color: #19633a;
+}
+
+/* Buttons Group (Hero & Footer) */
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+/* ----------------- About ----------------- */
 .about-preview {
   background: #fef9e4;
   padding: 4rem 2rem;
@@ -216,27 +231,12 @@ a,
   margin-bottom: 1.5rem;
 }
 
-.btn-about {
-  background: #19633a;
-  color: #fef9e4;
-  padding: 0.8rem 1.8rem;
-  text-decoration: none;
-  border: 2px solid #19633a;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn-about:hover {
-  background: #fef9e4;
-  color: #19633a;
-}
-
 .about-image img {
   width: 100%;
   border-radius: 10px;
 }
 
-/* Products */
+/* ----------------- Products ----------------- */
 .featured-products {
   background: #19633a;
   padding: 4rem 2rem;
@@ -272,18 +272,16 @@ a,
   overflow: hidden;
   transition: transform 0.3s ease;
   text-align: center;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
 }
 
 .card-image img {
   width: 100%;
   display: block;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-.product-card:hover {
-  transform: translateY(-8px);
 }
 
 .card-icon {
@@ -306,9 +304,6 @@ a,
   color: #19633a;
   border: 2px solid #fef9e4;
   font-weight: bold;
-  padding: 0.8rem 1.8rem;
-  text-decoration: none;
-  transition: 0.3s;
 }
 
 .view-all-btn .btn:hover {
@@ -317,7 +312,7 @@ a,
   border: 2px solid #fef9e4;
 }
 
-/* USP Section */
+/* ----------------- USP Section ----------------- */
 .usp-section {
   background: #fef9e4;
   padding: 4rem 2rem;
@@ -328,7 +323,6 @@ a,
 .usp-section h2 {
   font-size: 2.2rem;
   margin-bottom: 2rem;
-  color: #19633a;
 }
 
 .usp-container {
@@ -352,12 +346,11 @@ a,
   font-size: 2rem;
 }
 
-/* Export Process */
+/* ----------------- Export Process ----------------- */
 .export-process {
   background: #19633a;
   padding: 4rem 2rem;
   text-align: center;
-  width: 100%;
 }
 
 .process-timeline {
@@ -381,7 +374,6 @@ a,
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   min-height: 260px;
 }
 
@@ -402,7 +394,7 @@ a,
   margin: 0 auto 1rem auto;
 }
 
-/* Blog */
+/* ----------------- Blog ----------------- */
 .blog-preview {
   background: #fef9e4;
   padding: 4rem 2rem;
@@ -412,7 +404,6 @@ a,
 .blog-preview h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
-  color: #19633a;
 }
 
 .blog-grid {
@@ -455,7 +446,6 @@ a,
   color: #fef9e4;
   text-decoration: none;
   font-weight: bold;
-  margin-bottom: 2rem;
 }
 
 .hover-underline:hover {
@@ -463,7 +453,7 @@ a,
   opacity: 0.5;
 }
 
-/* CTA Footer */
+/* ----------------- CTA Footer ----------------- */
 .cta-footer {
   background-color: #19633a;
   color: #fef9e4;
@@ -474,30 +464,11 @@ a,
 .cta-footer h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
-  font-family: "Montserrat", sans-serif;
 }
 
 .cta-footer p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  font-family: "Lato", sans-serif;
-}
-
-.cta-footer .cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.cta-footer .btn,
-.cta-footer .btn-outline {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  padding: 0.8rem 1.8rem;
-  border: 2px solid #fef9e4;
-  text-decoration: none;
-  transition: 0.3s;
 }
 
 .cta-footer .btn {
@@ -520,12 +491,11 @@ a,
   color: #19633a;
 }
 
-/* Footer */
+/* ----------------- Footer ----------------- */
 .site-footer {
   background-color: #19633a;
   color: #fef9e4;
   padding: 3rem 2rem 2rem;
-  font-family: "Raleway", sans-serif;
 }
 
 .footer-container {
@@ -542,24 +512,8 @@ a,
   margin-bottom: 1rem;
 }
 
-.footer-brand p {
-  width: 100%;
-  line-height: 1.5;
-}
-
-.footer-links h4,
-.footer-social h4 {
-  margin-bottom: 1rem;
-  font-family: "Montserrat", sans-serif;
-}
-
 .footer-links ul {
   list-style: none;
-  padding: 0;
-}
-
-.footer-links li {
-  margin-bottom: 0.5rem;
 }
 
 .footer-links a {
@@ -568,7 +522,8 @@ a,
   transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.social-icons a:hover {
   color: #fbca30;
 }
 
@@ -576,15 +531,6 @@ a,
   display: flex;
   gap: 1rem;
   font-size: 1.5rem;
-}
-
-.social-icons a {
-  color: #fef9e4;
-  transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #fbca30;
 }
 
 .footer-bottom {
@@ -603,7 +549,7 @@ a,
   opacity: 0.2;
 }
 
-/* Hamburger styles */
+/* ----------------- Hamburger ----------------- */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -615,6 +561,7 @@ a,
   cursor: pointer;
   z-index: 1001;
 }
+
 .hamburger span {
   height: 4px;
   width: 100%;
@@ -623,17 +570,40 @@ a,
   border-radius: 2px;
   transition: 0.3s;
 }
+
 .hamburger.active span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
+
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.active span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* ---------- Responsive Breakpoints ---------- */
+/* ----------------- Responsive Breakpoints ----------------- */
+
+/* Buttons responsive fix */
+@media (max-width: 480px) {
+  .btn,
+  .btn-outline,
+  .btn-about {
+    display: block;
+    width: 90%;
+    max-width: 300px;
+    margin: 0.5rem auto;
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 0.9rem 1.2rem;
+    box-sizing: border-box;
+  }
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
 
 /* Very Small Mobiles (≤393px) */
 @media (max-width: 393px) {
@@ -643,7 +613,6 @@ a,
     gap: 0;
     padding-top: 60px;
     display: none;
-    background: #19633a;
   }
   .navbar-container.active {
     display: flex;
@@ -679,27 +648,10 @@ a,
     display: flex;
     gap: 1.5rem;
   }
-
-  .btn,
-  .btn-outline,
-  .btn-about {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-  }
 }
 
-/* Small Mobiles (394px - 420px) */
-@media (min-width: 394px) and (max-width: 420px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  .hero-content p {
-    font-size: 1.2rem;
-  }
-}
-
-/* Tablets and Small Laptops (421px - 1024px) */
-@media (min-width: 421px) and (max-width: 1024px) {
+/* Tablets and Small Laptops (≤1024px) */
+@media (max-width: 1024px) {
   .navbar-container {
     flex-direction: column;
     align-items: flex-start;
@@ -719,81 +671,15 @@ a,
     flex-direction: column;
     text-align: center;
   }
-
   .process-timeline {
     flex-wrap: nowrap;
     overflow-x: scroll;
   }
-
   .hero-content h1 {
     font-size: 2.2rem;
   }
   .hero-content p {
     font-size: 1.2rem;
-  }
-}
-
-/* Standard Laptops (1025px - 1536px) */
-@media (min-width: 1025px) and (max-width: 1536px) {
-  .navbar-container {
-    flex-direction: row;
-    gap: 20px;
-    justify-content: center;
-  }
-  .hero-content h1 {
-    font-size: 3.2rem;
-  }
-  .hero-content p {
-    font-size: 1.4rem;
-  }
-
-  .about-container,
-  .usp-container,
-  .footer-container {
-    flex-direction: row;
-  }
-
-  .process-timeline {
-    flex-wrap: nowrap;
-    gap: 1.2rem;
-  }
-}
-
-/* Large Desktops (≥1536px) */
-@media (min-width: 1536px) {
-  .navbar-container {
-    gap: 40px;
-  }
-  .hero-content h1 {
-    font-size: 4rem;
-  }
-  .hero-content p {
-    font-size: 1.6rem;
-  }
-  .btn,
-  .btn-outline,
-  .btn-about {
-    padding: 1rem 2.2rem;
-    font-size: 1.1rem;
-  }
-}
-
-/* Ultra-Wide Screens (≥1920px) */
-@media (min-width: 1920px) {
-  body {
-    font-size: 18px;
-  }
-  .hero-content h1 {
-    font-size: 4.5rem;
-  }
-  .hero-content p {
-    font-size: 1.8rem;
-  }
-  .about-container,
-  .usp-container,
-  .footer-container {
-    max-width: 1600px;
-    margin: auto;
   }
 }
 
@@ -811,7 +697,7 @@ a,
   }
 }
 
-/* Why Choose Us (USP Section) */
+/* USP Section */
 @media (max-width: 768px) {
   .usp-container {
     display: flex;
@@ -820,12 +706,9 @@ a,
     align-items: center;
     text-align: center;
   }
-  .usp-icon {
-    margin-bottom: 0.8rem;
-  }
 }
 
-/* From Farm to Port (Export Process Section) */
+/* Export Process Section */
 @media (max-width: 768px) {
   .process-timeline {
     display: flex;
@@ -837,18 +720,18 @@ a,
   .process-step {
     width: 90%;
     max-width: 320px;
-    text-align: center;
   }
 }
-@media (max-width: 393px) {
-  .products-container,
+
+/* Standard Laptops (1025px - 1536px) */
+@media (min-width: 1025px) and (max-width: 1536px) {
+  .about-container,
   .usp-container,
-  .process-timeline {
-    gap: 1rem;
+  .footer-container {
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  .product-card,
-  .process-step {
-    width: 95%;
-    max-width: 300px;
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
