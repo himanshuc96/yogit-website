@@ -550,19 +550,26 @@ a,
   background-color: #19633a;
   color: #fef8e4;
   padding: 3rem 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-between;
-  gap: 2rem;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 15rem;
   flex-wrap: wrap;
-  max-width: 1200px;
+  width: 100%;
+  /* border: 2px solid rebeccapurple; */
   margin: auto;
 }
 
 .footer-brand img {
-  width: 120px;
+  width: 220px;
   margin-bottom: 1rem;
 }
 
@@ -619,6 +626,7 @@ a,
   font-size: 0.9rem;
   border-top: 1px solid rgba(254, 249, 228, 0.2);
   padding-top: 1rem;
+  width: 100%;
 }
 
 .footer-divider-line {
