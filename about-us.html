@@ -3,46 +3,161 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yogit Global Import Export LLP</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <title>About Us - Yogit Global Import Export LLP</title>
+    <link rel="stylesheet" href="css/about-us.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/e6d44.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
+    <!-- Navbar -->
     <header>
-      <nav>
-        <div>
-          <ul class="navbar-container">
-            <li class="navlinks">
-              <img
-                id="logo"
-                src="/assets/img/logo/logo-2.png"
-                alt="Yogit Global EXIM LLP"
-              />
-            </li>
-            <li>
-              <a href="/index.html"><span>Home</span></a>
-            </li>
+      <nav class="navbar">
+        <a href="index.html" class="logo-link">
+          <img
+            id="logo"
+            src="assets/img/logo/logo-2.png"
+            alt="Yogit Global EXIM LLP"
+            loading="lazy"
+          />
+        </a>
 
-            <li>
-              <a href="/about-us.html"><span>About Us</span></a>
-            </li>
-            <li>
-              <a href="/products.html"><span>Products</span></a>
-            </li>
-            <li>
-              <a href="/certificates.html"><span>Certificates</span></a>
-            </li>
-            <li>
-              <a href="/gallery.html"><span>Gallery</span></a>
-            </li>
-            <li>
-              <a href="/blog.html"><span>Blogs</span></a>
-            </li>
-            <li>
-              <a href="/contact.html"><span>Contact Us</span></a>
-            </li>
-          </ul>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about-us.html" class="active">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="certificates.html">Certificates</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blog.html">Blogs</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+
+        <!-- Modern toggle button -->
+        <div class="nav-toggle" id="nav-toggle">
+          <span></span><span></span><span></span>
         </div>
       </nav>
     </header>
+
+    <!-- Banner -->
+    <section class="banner">
+      <div class="banner-content">
+        <h1>Our Story</h1>
+      </div>
+    </section>
+
+    <!-- Company Profile -->
+    <section class="company-profile">
+      <div class="container">
+        <h2>Company Profile</h2>
+        <p>
+          Yogit Global Import Export LLP is a leading name in international
+          trade, specializing in high-quality products and sustainable business
+          practices. We aim to deliver the best to our clients worldwide with
+          integrity and innovation.
+        </p>
+      </div>
+    </section>
+
+    <!-- Mission Vision Values -->
+    <section class="mission-vision-values">
+      <div class="container">
+        <div class="mvv-card">
+          <h3>Mission</h3>
+          <p>
+            To provide superior quality products with customer satisfaction at
+            the core.
+          </p>
+        </div>
+        <div class="mvv-card">
+          <h3>Vision</h3>
+          <p>To become a globally recognized leader in international trade.</p>
+        </div>
+        <div class="mvv-card">
+          <h3>Values</h3>
+          <p>
+            Integrity, Innovation, Sustainability, and Excellence in every step
+            we take.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline">
+      <div class="container">
+        <h2>Our Journey</h2>
+        <div class="timeline-items">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="year">2018</span>
+              <p>
+                Yogit Global EXIM LLP was founded with a vision for global
+                trade.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="year">2020</span>
+              <p>Expanded operations to multiple international markets.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="year">2024</span>
+              <p>
+                Launched sustainable initiatives to enhance product quality and
+                customer trust.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team (Optional) -->
+    <section class="team">
+      <div class="container">
+        <h2>Meet Our Team</h2>
+        <div class="team-members">
+          <div class="team-card">
+            <img src="assets/img/team/member1.jpg" alt="Team Member" />
+            <h4>John Doe</h4>
+            <p>CEO</p>
+          </div>
+          <div class="team-card">
+            <img src="assets/img/team/member2.jpg" alt="Team Member" />
+            <h4>Jane Smith</h4>
+            <p>COO</p>
+          </div>
+          <div class="team-card">
+            <img src="assets/img/team/member3.jpg" alt="Team Member" />
+            <h4>David Johnson</h4>
+            <p>Marketing Head</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Yogit Global Import Export LLP. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Navbar toggle
+      const navToggle = document.getElementById("nav-toggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      navToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+        navToggle.classList.toggle("open");
+      });
+    </script>
   </body>
 </html>

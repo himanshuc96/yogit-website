@@ -250,7 +250,7 @@ a,
 .about-text {
   padding: 2rem;
   color: #19633a;
-  width: 80%; /* Adjusted to take 60% of the width */
+  width: 100%; /* Adjusted to take 60% of the width */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -653,6 +653,9 @@ a,
   .about-text h2 {
     text-align: center;
   }
+  .about-image {
+    display: none;
+  }
 }
 
 /* Very Small Mobiles (≤393px) */
@@ -748,6 +751,10 @@ a,
   }
   .about-text h2 {
     text-align: center;
+  }
+
+  .about-image {
+    display: none;
   }
 }
 
