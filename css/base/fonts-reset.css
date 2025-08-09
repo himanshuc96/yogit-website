@@ -3,9 +3,9 @@
 
 /* ----------------- Color Variables ----------------- */
 :root {
-  --primary-color: #19633a; /* Dark green */
-  --secondary-color: #fef8e4; /* Light cream */
-  --accent-color: #fbca30; /* Yellowish accent */
+  --primary-color: #278bad; /* Dark green */
+  --secondary-color: #fffafa; /* Light cream */
+  --accent-color: #42c3ee; /* Yellowish accent */
   --border-color: rgba(254, 249, 228, 0.2); /* Semi-transparent cream */
 }
 
