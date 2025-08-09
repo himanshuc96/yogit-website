@@ -1,0 +1,45 @@
+/* ----------------- Font Imports ----------------- */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@400;500;600&family=Raleway:wght@400;500&display=swap");
+
+/* ----------------- Color Variables ----------------- */
+:root {
+  --primary-color: #19633a; /* Dark green */
+  --secondary-color: #fef8e4; /* Light cream */
+  --accent-color: #fbca30; /* Yellowish accent */
+  --border-color: rgba(254, 249, 228, 0.2); /* Semi-transparent cream */
+}
+
+/* ----------------- Reset ----------------- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
+  font-family: "Raleway", sans-serif;
+  line-height: 1.6;
+}
+
+a,
+.btn,
+.btn-outline,
+.btn-about {
+  font-family: "Poppins", sans-serif;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found | Yogit Global</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      :root {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      body {
+        background-color: #fef9e4;
+        color: #19633a;
+        font-family: "Lato", sans-serif;
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* min-height: 100vh; */
+        text-align: center;
+        /* padding: 2rem; */
+        /* border: 3px solid green; */
+      }
+      .error-container {
+        /* border: 2px solid red; */
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .error-code {
+        font-size: 8rem;
+        font-weight: 800;
+        color: #fbca30;
+      }
+      .error-message {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        /* margin-bottom: 3rem; */
+      }
+      .home-btn {
+        /* margin-top: 2.5rem; */
+        padding: 0.75rem 1.5rem;
+        background-color: #19633a;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+      }
+      .home-btn:hover {
+        background-color: #145229;
+      }
+      .error-icon {
+        font-size: 4rem;
+        color: #19633a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="error-container">
+      <div class="error-icon"><i class="fas fa-exclamation-triangle"></i></div>
+      <div class="error-code">404</div>
+      <div class="error-message">
+        Oops! The page you're looking for doesn't exist.
+      </div>
+      <a href="index.html" class="home-btn">Go to Home</a>
+    </div>
+  </body>
+</html>

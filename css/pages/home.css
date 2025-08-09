@@ -1,0 +1,350 @@
+/* ----------------- Hero ----------------- */
+.hero-banner {
+  position: relative;
+  height: 100vh;
+  background: url("/assets/img/bg-img/bg-img-1.png") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  color: var(--secondary-color);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* ----------------- About ----------------- */
+.about-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.about-text,
+.about-image {
+  flex: 1;
+}
+
+.about-text {
+  padding: 2rem;
+  color: var(--primary-color);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-text p {
+  width: 100%;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin: 40px 0;
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.about-text .btn-about {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.8rem;
+}
+
+/* ----------------- Products ----------------- */
+.featured-products {
+  background: var(--primary-color);
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.section-heading h2 {
+  font-size: 2.2rem;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.section-heading p {
+  margin-bottom: 2rem;
+  color: var(--secondary-color);
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.product-card {
+  background: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: center;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+.card-image img {
+  width: 100%;
+  display: block;
+}
+
+.card-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 0.6rem;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+.product-card h3 {
+  margin: 1rem 0;
+}
+
+.view-all-btn .btn {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  border: 2px solid var(--secondary-color);
+  font-weight: bold;
+}
+
+.view-all-btn .btn:hover {
+  background: transparent;
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+}
+
+/* ----------------- USP Section ----------------- */
+.usp-section {
+  background: var(--secondary-color);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.usp-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.usp-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.usp-icon {
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto auto 1rem auto;
+  font-size: 2rem;
+}
+
+/* ----------------- Export Process ----------------- */
+.export-process {
+  background: var(--primary-color);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.process-timeline {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.5rem;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.process-step {
+  background: var(--secondary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--primary-color);
+  max-width: 260px;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+}
+
+.process-step:hover {
+  transform: translateY(-8px);
+}
+
+.process-step i {
+  font-size: 1.5rem;
+  border: 5px double var(--primary-color);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem auto;
+}
+
+/* ----------------- Blog ----------------- */
+.blog-preview {
+  background: var(--secondary-color);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.blog-preview h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.blog-card {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.blog-card img {
+  width: 100%;
+}
+
+.blog-content {
+  padding: 1rem;
+}
+
+.blog-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-content p {
+  margin-bottom: 1rem;
+}
+
+.blog-content a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hover-underline:hover {
+  text-decoration: underline;
+  opacity: 0.5;
+}
+
+/* ----------------- CTA Footer ----------------- */
+.cta-footer {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.cta-footer h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-footer p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.cta-footer .btn {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.cta-footer .btn:hover {
+  background-color: transparent;
+  color: var(--secondary-color);
+}
+
+.cta-footer .btn-outline {
+  background-color: transparent;
+  color: var(--secondary-color);
+}
+
+.cta-footer .btn-outline:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}

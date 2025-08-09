@@ -3,18 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us - Yogit Global Import Export LLP</title>
-    <link rel="stylesheet" href="css/about-us.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <script
-      src="https://kit.fontawesome.com/e6d44.js"
-      crossorigin="anonymous"
-    ></script>
+    <title>Our Story - Yogit Global Import Export LLP</title>
+    <link rel="stylesheet" href="css/pages/about.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   </head>
+
   <body>
-    <!-- Navbar -->
+    <!-- Header -->
     <header>
-      <nav class="navbar">
+      <nav class="navbar" role="navigation">
         <a href="index.html" class="logo-link">
           <img
             id="logo"
@@ -23,141 +24,177 @@
             loading="lazy"
           />
         </a>
-
         <div class="nav-links">
           <a href="index.html">Home</a>
-          <a href="about-us.html" class="active">About Us</a>
+          <a href="about-us.html">About Us</a>
           <a href="products.html">Products</a>
           <a href="certificates.html">Certificates</a>
           <a href="gallery.html">Gallery</a>
           <a href="blog.html">Blogs</a>
           <a href="contact.html">Contact Us</a>
         </div>
-
-        <!-- Modern toggle button -->
-        <div class="nav-toggle" id="nav-toggle">
+        <div
+          class="nav-toggle"
+          id="nav-toggle"
+          tabindex="0"
+          role="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
           <span></span><span></span><span></span>
         </div>
       </nav>
     </header>
 
-    <!-- Banner -->
-    <section class="banner">
-      <div class="banner-content">
-        <h1>Our Story</h1>
+    <!-- Banner Section -->
+    <section class="about-banner">
+      <div class="overlay">
+        <h1>About Us</h1>
+        <p>Your trusted partner in global trade</p>
       </div>
     </section>
 
-    <!-- Company Profile -->
-    <section class="company-profile">
+    <!-- Company Profile Section -->
+    <section class="company-profile section">
       <div class="container">
-        <h2>Company Profile</h2>
+        <h2>Who We Are</h2>
         <p>
-          Yogit Global Import Export LLP is a leading name in international
-          trade, specializing in high-quality products and sustainable business
-          practices. We aim to deliver the best to our clients worldwide with
-          integrity and innovation.
+          Yogit Global Import Export LLP is a fresh and passionate import-export
+          firm based in India. We specialize in sourcing and delivering premium
+          agricultural products — such as rice, spices, and other commodities —
+          to international markets.
+        </p>
+        <p>
+          As a new business, we are committed to ethical sourcing, transparent
+          operations, and building lasting global relationships. Every product
+          we deliver reflects our dedication to quality and consistency.
         </p>
       </div>
     </section>
 
-    <!-- Mission Vision Values -->
-    <section class="mission-vision-values">
-      <div class="container">
-        <div class="mvv-card">
-          <h3>Mission</h3>
+    <!-- Mission, Vision, Values Section -->
+    <section class="mvv section">
+      <div class="container mvv-grid">
+        <div class="mvv-item">
+          <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
           <p>
-            To provide superior quality products with customer satisfaction at
-            the core.
+            To connect Indian farmers and producers with the world by offering
+            premium quality products and seamless export services.
           </p>
         </div>
-        <div class="mvv-card">
-          <h3>Vision</h3>
-          <p>To become a globally recognized leader in international trade.</p>
-        </div>
-        <div class="mvv-card">
-          <h3>Values</h3>
+        <div class="mvv-item">
+          <h3><i class="fas fa-eye"></i> Our Vision</h3>
           <p>
-            Integrity, Innovation, Sustainability, and Excellence in every step
-            we take.
+            To become a globally respected and trusted name in agricultural
+            exports, known for transparency, integrity, and quality.
           </p>
+        </div>
+        <div class="mvv-item">
+          <h3><i class="fas fa-heart"></i> Our Values</h3>
+          <p>Trust, Quality, Responsibility, Innovation, and Sustainability.</p>
         </div>
       </div>
     </section>
 
-    <!-- Timeline -->
-    <section class="timeline">
+    <!-- Why Choose Us -->
+    <section class="why-choose section">
       <div class="container">
-        <h2>Our Journey</h2>
-        <div class="timeline-items">
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <span class="year">2018</span>
-              <p>
-                Yogit Global EXIM LLP was founded with a vision for global
-                trade.
-              </p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <span class="year">2020</span>
-              <p>Expanded operations to multiple international markets.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <span class="year">2024</span>
-              <p>
-                Launched sustainable initiatives to enhance product quality and
-                customer trust.
-              </p>
-            </div>
-          </div>
-        </div>
+        <h2>Why Choose Yogit Global?</h2>
+        <ul>
+          <li>
+            <i class="fas fa-check-circle"></i> Transparent Business Practices
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i> Strong supplier relationships
+            across India
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i> Global export compliance and
+            documentation
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i> Fresh and authentic Indian
+            products
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- Team (Optional) -->
-    <section class="team">
+    <!-- Founder's Message -->
+    <section class="founder section">
       <div class="container">
-        <h2>Meet Our Team</h2>
-        <div class="team-members">
-          <div class="team-card">
-            <img src="assets/img/team/member1.jpg" alt="Team Member" />
-            <h4>John Doe</h4>
-            <p>CEO</p>
-          </div>
-          <div class="team-card">
-            <img src="assets/img/team/member2.jpg" alt="Team Member" />
-            <h4>Jane Smith</h4>
-            <p>COO</p>
-          </div>
-          <div class="team-card">
-            <img src="assets/img/team/member3.jpg" alt="Team Member" />
-            <h4>David Johnson</h4>
-            <p>Marketing Head</p>
-          </div>
-        </div>
+        <h2>Founder's Message</h2>
+        <p>
+          "At Yogit Global, we began with a simple dream — to bring the richness
+          of Indian agriculture to the world. As a new company, we bring energy,
+          integrity, and an unwavering focus on quality. We welcome you to join
+          our journey." <br /><strong>- Founder, Yogit Global LLP</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- Call To Action -->
+    <section class="cta section">
+      <div class="container">
+        <h2>Let’s Build Trade Partnerships That Last</h2>
+        <p>
+          Contact us today to explore trade opportunities or request product
+          samples.
+        </p>
+        <a href="contact.html" class="btn">Get in Touch</a>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <p>&copy; 2025 Yogit Global Import Export LLP. All Rights Reserved.</p>
+    <footer class="site-footer" data-aos="fade-up" data-aos-delay="100">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <img
+            src="assets/img/logo/logo-2.png"
+            alt="Yogit Global Import Export LLP"
+            loading="lazy"
+          />
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/" target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="https://www.instagram.com/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.facebook.com/" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.youtube.com/" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="https://twitter.com/" target="_blank"
+              ><i class="fab fa-x-twitter"></i
+            ></a>
+            <a href="https://wa.me/8618122373" target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom" data-aos="fade-in" data-aos-delay="200">
+        <p>&copy; 2025 Yogit Global Import Export LLP. All rights reserved.</p>
       </div>
     </footer>
 
-    <script>
-      // Navbar toggle
-      const navToggle = document.getElementById("nav-toggle");
-      const navLinks = document.querySelector(".nav-links");
-
-      navToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
-        navToggle.classList.toggle("open");
-      });
-    </script>
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
