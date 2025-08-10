@@ -7,6 +7,19 @@
   --secondary-color: #fffafa; /* Light cream */
   --accent-color: #42c3ee; /* Yellowish accent */
   --border-color: rgba(254, 249, 228, 0.2); /* Semi-transparent cream */
+  --gray-background: #a1a3a7; /* Gray background for buttons */
+
+  --linked-in-color: #0077b5; /* LinkedIn color */
+  --facebook-color: #3b5998; /* Facebook color */
+  --twitter-color: #000000; /* Twitter color */
+  --instagram-color: linear-gradient(
+    115deg,
+    #f9ce34,
+    #ee2a7b,
+    #6228d7
+  ); /* Instagram color */
+  --youtube-color: #ff0000; /* YouTube color */
+  --whatsapp-color: #25d366; /* WhatsApp color */
 }
 
 /* ----------------- Reset ----------------- */

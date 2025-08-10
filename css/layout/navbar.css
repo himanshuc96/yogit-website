@@ -12,6 +12,7 @@
   width: 100%;
   z-index: 1000;
   transition: 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .navbar.shrink {
@@ -68,7 +69,8 @@
 .nav-toggle span {
   width: 26px;
   height: 3px;
-  background: var(--secondary-color);
+  background: var(--primary-color);
+  color: var(--primary-color);
   border-radius: 2px;
   transition: 0.3s;
   margin-left: 100px;

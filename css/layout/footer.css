@@ -1,8 +1,7 @@
 /* ----------------- Footer ----------------- */
 .site-footer {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  padding: 3rem 2rem 2rem;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,12 +11,13 @@
 
 .footer-container {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 2rem; /* Reduced gap */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
   flex-wrap: wrap;
   width: 100%;
   margin: auto;
+  padding: 2rem 0 1rem 1rem;
 }
 
 .footer-brand img {
@@ -30,50 +30,83 @@
 }
 
 .footer-links ul li {
-  margin: 10px 10px 10px 0;
+  margin: 5px;
 }
 
 .footer-links a {
-  color: var(--secondary-color);
+  color: var(--primary-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.footer-links a:hover,
-.social-icons a:hover {
+.footer-links a:hover {
   color: var(--accent-color);
 }
 
 .social-icons {
   display: flex;
   gap: 1rem;
-  font-size: 1.6rem;
-  color: var(--secondary-color);
+  font-size: 2rem;
   margin-top: 10px;
   justify-content: center;
   align-items: center;
 }
 
-.social-icons a {
-  color: var(--secondary-color);
-  text-decoration: none;
+.social-icons i {
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.social-icons a:visited {
-  color: var(--secondary-color);
+/* Brand Colors */
+.social-icons .linked-in-color {
+  color: var(--linked-in-color);
+}
+.social-icons .facebook-color {
+  color: var(--facebook-color);
+}
+.social-icons .instagram-color {
+  background: var(--instagram-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.social-icons .youtube-color {
+  color: var(--youtube-color);
+}
+.social-icons .x-color {
+  color: var(--twitter-color);
+}
+.social-icons .whatsapp-color {
+  color: var(--whatsapp-color);
+}
+
+/* Hover Effects */
+.social-icons .linked-in-color:hover {
+  color: #0a8ed9;
+}
+.social-icons .facebook-color:hover {
+  color: #4d70ba;
+}
+.social-icons .instagram-color:hover {
+  background: var(--instagram-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.social-icons .youtube-color:hover {
+  color: #ff4d4d;
+}
+.social-icons .x-color:hover {
+  color: #333333;
+}
+.social-icons .whatsapp-color:hover {
+  color: #3be374;
 }
 
 .social-icons a:hover {
-  color: var(--accent-color);
-}
-
-.social-icons a:active {
-  color: var(--secondary-color);
+  transform: scale(1.2);
 }
 
 .footer-bottom {
   text-align: center;
-  margin-top: 2rem;
+  margin-bottom: 1rem;
   font-size: 0.9rem;
   border-top: 1px solid var(--border-color);
   padding-top: 1rem;
@@ -82,8 +115,77 @@
 
 .footer-divider-line {
   height: 2px;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   width: 60%;
   margin: 0 auto;
   opacity: 0.2;
+}
+/* ----------------- Toggle (Hamburger) ----------------- */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  gap: 5px;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1001; /* Make sure it's above menu */
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* When menu is open */
+.navbar.menu-open .nav-toggle span {
+  background: var(--secondary-color);
+}
+
+/* Animate into X */
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--secondary-color);
+    flex-direction: column;
+    width: 200px;
+    transform: translateY(-200%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Menu text color when open */
+  .navbar.menu-open .nav-links a {
+    color: var(--primary-color);
+  }
 }

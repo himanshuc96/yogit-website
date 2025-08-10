@@ -1,0 +1,25 @@
+:root {
+  --primary-color: #278bad; /* Dark green */
+  --secondary-color: #fffafa; /* Light cream */
+  --accent-color: #42c3ee; /* Yellowish accent */
+  --border-color: rgba(254, 249, 228, 0.2); /* Semi-transparent cream */
+  --gray-background: #a1a3a7; /* Gray background for buttons */
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.text-dark {
+  color: var(--primary-color);
+}
+
+.text-light {
+  color: var(--secondary-color);
+}

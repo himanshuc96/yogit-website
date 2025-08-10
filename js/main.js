@@ -1,10 +1,3 @@
-// AOS initialization
-AOS.init({
-  duration: 800,
-  once: true,
-  disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-});
-
 document.addEventListener("DOMContentLoaded", () => {
   const navToggle = document.querySelector("#nav-toggle");
   const navLinks = document.querySelector(".nav-links");
@@ -15,6 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
     navToggle.addEventListener("click", () => {
       navLinks.classList.toggle("active");
       navToggle.classList.toggle("active");
+
+      // Add/remove menu-open class on navbar (or body)
+      navbar.classList.toggle(
+        "menu-open",
+        navLinks.classList.contains("active")
+      );
     });
 
     // Close menu when link is clicked
@@ -22,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("active");
         navToggle.classList.remove("active");
+        navbar.classList.remove("menu-open");
       });
     });
 
@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         navLinks.classList.toggle("active");
         navToggle.classList.toggle("active");
+        navbar.classList.toggle(
+          "menu-open",
+          navLinks.classList.contains("active")
+        );
       }
     });
   }
