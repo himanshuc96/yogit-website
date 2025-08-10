@@ -145,7 +145,7 @@
 
 /* When menu is open */
 .navbar.menu-open .nav-toggle span {
-  background: var(--secondary-color);
+  background: var(--primary-color);
 }
 
 /* Animate into X */
