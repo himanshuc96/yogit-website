@@ -538,6 +538,7 @@
   .cta-footer p {
     font-size: 1rem;
   }
+<<<<<<< HEAD
 }
 
 /* Footer Base */
@@ -657,4 +658,6 @@
   .footer-social .social-icons a {
     margin: 0 0.4rem;
   }
+=======
+>>>>>>> 50fa62af78c8df2cc4c50ce2b12d03aa733dfbac
 }
