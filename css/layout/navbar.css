@@ -22,7 +22,7 @@
   width: 250px;
 }
 
-/* Desktop Links */
+/* Nav links desktop */
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -56,14 +56,13 @@
   width: 100%;
 }
 
-/* Toggle button (hidden on desktop) */
+/* Toggle button (hamburger) */
 .nav-toggle {
   display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  align-items: flex-end;
-  z-index: 3000;
+  align-items: end;
 }
 
 .nav-toggle span {
@@ -71,29 +70,33 @@
   height: 4px;
   background: var(--primary-color);
   border-radius: 2px;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  transition: 0.4s ease;
 }
 
-/* Overlay background */
+/* Overlay for dimming background */
 .menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease;
-  z-index: 1500;
+  display: none;
 }
 
 .menu-overlay.active {
-  opacity: 1;
-  visibility: visible;
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1500;
+  animation: fadeIn 0.3s ease forwards;
 }
 
-/* Mobile Styles */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Menu */
 @media (max-width: 900px) {
   .nav-links {
     position: fixed;
@@ -106,8 +109,8 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    z-index: 2000;
     transition: right 0.4s ease, opacity 0.4s ease;
+    z-index: 2000;
     opacity: 0;
   }
 
@@ -116,28 +119,30 @@
     font-size: 1.2rem;
   }
 
-  /* Active menu state (fade + slide) */
   .nav-links.active {
     right: 0;
     opacity: 1;
   }
 
-  /* Show toggle on mobile */
+  /* Fixed toggle in mobile view */
   .nav-toggle {
     display: flex;
-    z-index: 4000;
     position: fixed;
-    top: 1.5rem;
+    top: 1rem;
     right: 1.5rem;
+    z-index: 5000;
   }
-  /* Animated hamburger icon */
+
+  /* Hamburger to X animation */
   .nav-toggle.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
+    background: white;
   }
   .nav-toggle.active span:nth-child(2) {
     opacity: 0;
   }
   .nav-toggle.active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+    background: white;
   }
 }
