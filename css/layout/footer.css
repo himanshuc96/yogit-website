@@ -1,6 +1,6 @@
 /* Footer Base */
 .site-footer {
-  background: var(--secondary-color);
+  background-color: var(--secondary-color);
   color: var(--primary-color);
   padding: 2rem 1.5rem 1rem;
   font-family: Arial, sans-serif;
@@ -44,78 +44,65 @@
   color: var(--primary-color);
   text-decoration: none;
   transition: color 0.3s ease;
-  font-size: 1rem;
 }
 
 .footer-links ul li a:hover {
   color: var(--accent-color);
-  text-decoration: underline;
 }
 
 /* Social Icons */
 .footer-social .social-icons a {
   display: inline-block;
   margin-right: 0.6rem;
-  font-size: 1.2rem;
-  color: var(--secondary-color);
+  font-size: 1.5rem;
+  color: var(--primary-color);
   transition: all 0.3s ease;
 }
 
 .footer-social .social-icons a:hover {
-  transform: scale(1.1);
+  transform: scale(1.5);
 }
 
-/* Individual brand hover colors */
-.footer-social .social-icons a:nth-child(1):hover {
+.footer-social .social-icons a:nth-child(1) {
   color: var(--linked-in-color);
 }
-.footer-social .social-icons a:nth-child(2):hover {
+.footer-social .social-icons a:nth-child(2) {
   background: var(--instagram-color);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.footer-social .social-icons a:nth-child(3):hover {
+.footer-social .social-icons a:nth-child(3) {
   color: var(--facebook-color);
 }
-.footer-social .social-icons a:nth-child(4):hover {
+.footer-social .social-icons a:nth-child(4) {
   color: var(--youtube-color);
 }
-.footer-social .social-icons a:nth-child(5):hover {
+.footer-social .social-icons a:nth-child(5) {
   color: var(--twitter-color);
 }
-.footer-social .social-icons a:nth-child(6):hover {
+.footer-social .social-icons a:nth-child(6) {
   color: var(--whatsapp-color);
 }
 
 /* Footer Bottom */
 .footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   padding-top: 1rem;
   margin-top: 1.5rem;
-  border-top: 1px solid var(--border-color);
+  /* border-top: 1px solid var(--primary-color); */
   font-size: 0.9rem;
-  color: var(--secondary-color);
-<<<<<<< HEAD
+  color: var(--primary-color);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .footer-social .social-icons a {
-    margin: 0 0.4rem;
-  }
-}
-
-.footer-divider-line {
-  width: 100%;
+.footer-bottom .footer-divider-line {
+  width: 80%;
   height: 1px;
-  background-color: var(--border-color);
-  /* margin: 1.5rem 0; */
-=======
+  background-color: var(--primary-color);
+  margin-bottom: 1rem;
+  /* margin: 1rem 0; */
 }
 
 /* Responsive */
@@ -128,5 +115,4 @@
   .footer-social .social-icons a {
     margin: 0 0.4rem;
   }
->>>>>>> 50fa62af78c8df2cc4c50ce2b12d03aa733dfbac
 }
