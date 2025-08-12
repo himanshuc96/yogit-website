@@ -68,11 +68,11 @@
 
 .nav-toggle span {
   width: 26px;
-  height: 3px;
+  height: 4px;
   background: var(--primary-color);
   color: var(--primary-color);
   border-radius: 2px;
-  transition: 0.3s;
+  transition: 0.5s;
   margin-left: 100px;
 }
 

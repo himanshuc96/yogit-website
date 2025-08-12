@@ -10,17 +10,64 @@
 
 @import url("/css/components/headings.css");
 
-.about-banner .overlay {
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 20px;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/assets/img/bg-img/bg-2.png") no-repeat center center/cover;
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.overlay p {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.overlay a {
+  margin-top: 1rem;
+}
+
+.who-we-are {
+  padding: 2rem 5rem;
+}
+
+.two-column {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  border: 2px solid red;
-  height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.about-banner .overlay h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  margin-top: 3rem;
+.text h1 {
+  font-size: 3rem;
+  margin-bottom: 1.8rem;
+}
+
+.text p {
+  font-size: 1.2rem;
+  line-height: 2;
 }
