@@ -7,6 +7,7 @@
   font-weight: bold;
   transition: 0.3s;
   display: inline-block;
+  border-radius: 10% 0 10% 10%;
   text-wrap: nowrap; /* Prevent text from wrapping */
   width: fit-content; /* Default: fixed width for large screens */
   text-align: center; /* Keep text centered */
@@ -22,6 +23,7 @@
   background: transparent;
   border: 2px solid var(--secondary-color);
   color: var(--secondary-color);
+  padding: 1rem 2rem;
 }
 
 .btn-outline:hover {

@@ -1,191 +1,117 @@
-/* ----------------- Footer ----------------- */
+/* Footer Base */
 .site-footer {
-  background-color: var(--secondary-color);
+  background: var(--secondary-color);
   color: var(--primary-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
+  padding: 2rem 1.5rem 1rem;
+  font-family: Arial, sans-serif;
 }
 
 .footer-container {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1rem;
   flex-wrap: wrap;
-  width: 100%;
-  margin: auto;
-  padding: 2rem 0 1rem 1rem;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Brand Logo */
 .footer-brand img {
-  width: 220px;
-  margin-bottom: 1rem;
+  max-width: 180px;
+  height: auto;
 }
 
+/* Section Titles */
+.footer-links h3,
+.footer-social h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: var(--primary-color);
+}
+
+/* Quick Links */
 .footer-links ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-links ul li {
-  margin: 5px;
+  margin-bottom: 0.5rem;
 }
 
-.footer-links a {
+.footer-links ul li a {
   color: var(--primary-color);
   text-decoration: none;
   transition: color 0.3s ease;
+  font-size: 1rem;
 }
 
-.footer-links a:hover {
+.footer-links ul li a:hover {
   color: var(--accent-color);
+  text-decoration: underline;
 }
 
-.social-icons {
-  display: flex;
-  gap: 1rem;
-  font-size: 2rem;
-  margin-top: 10px;
-  justify-content: center;
-  align-items: center;
+/* Social Icons */
+.footer-social .social-icons a {
+  display: inline-block;
+  margin-right: 0.6rem;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  transition: all 0.3s ease;
 }
 
-.social-icons i {
-  transition: color 0.3s ease, transform 0.3s ease;
+.footer-social .social-icons a:hover {
+  transform: scale(1.1);
 }
 
-/* Brand Colors */
-.social-icons .linked-in-color {
+/* Individual brand hover colors */
+.footer-social .social-icons a:nth-child(1):hover {
   color: var(--linked-in-color);
 }
-.social-icons .facebook-color {
-  color: var(--facebook-color);
-}
-.social-icons .instagram-color {
+.footer-social .social-icons a:nth-child(2):hover {
   background: var(--instagram-color);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.social-icons .youtube-color {
+.footer-social .social-icons a:nth-child(3):hover {
+  color: var(--facebook-color);
+}
+.footer-social .social-icons a:nth-child(4):hover {
   color: var(--youtube-color);
 }
-.social-icons .x-color {
+.footer-social .social-icons a:nth-child(5):hover {
   color: var(--twitter-color);
 }
-.social-icons .whatsapp-color {
+.footer-social .social-icons a:nth-child(6):hover {
   color: var(--whatsapp-color);
 }
 
-/* Hover Effects */
-.social-icons .linked-in-color:hover {
-  color: #0a8ed9;
-}
-.social-icons .facebook-color:hover {
-  color: #4d70ba;
-}
-.social-icons .instagram-color:hover {
-  background: var(--instagram-color);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.social-icons .youtube-color:hover {
-  color: #ff4d4d;
-}
-.social-icons .x-color:hover {
-  color: #333333;
-}
-.social-icons .whatsapp-color:hover {
-  color: #3be374;
-}
-
-.social-icons a:hover {
-  transform: scale(1.2);
-}
-
+/* Footer Bottom */
 .footer-bottom {
   text-align: center;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  border-top: 1px solid var(--border-color);
   padding-top: 1rem;
-  width: 100%;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-social .social-icons a {
+    margin: 0 0.4rem;
+  }
 }
 
 .footer-divider-line {
-  height: 2px;
-  background-color: var(--primary-color);
-  width: 60%;
-  margin: 0 auto;
-  opacity: 0.2;
-}
-/* ----------------- Toggle (Hamburger) ----------------- */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-right: 1rem;
-  gap: 5px;
-  width: 35px;
-  height: 30px;
-  cursor: pointer;
-  z-index: 1001; /* Make sure it's above menu */
-}
-
-.nav-toggle span {
-  display: block;
   width: 100%;
-  height: 3px;
-  background: var(--primary-color);
-  border-radius: 2px;
-  transition: all 0.5s ease;
-}
-
-/* When menu is open */
-.navbar.menu-open .nav-toggle span {
-  background: var(--primary-color);
-}
-
-/* Animate into X */
-.nav-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
-}
-.nav-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-.nav-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* Responsive behavior */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: flex;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: var(--secondary-color);
-    flex-direction: column;
-    width: 200px;
-    transform: translateY(-200%);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s ease;
-  }
-
-  .nav-links.active {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  /* Menu text color when open */
-  .navbar.menu-open .nav-links a {
-    color: var(--primary-color);
-  }
+  height: 1px;
+  background-color: var(--border-color);
+  /* margin: 1.5rem 0; */
 }
