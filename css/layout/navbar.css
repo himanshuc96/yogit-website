@@ -10,7 +10,7 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: 0.3s ease;
+  transition: padding 0.3s ease, background 0.3s ease;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -56,13 +56,13 @@
   width: 100%;
 }
 
-/* Toggle button (hamburger) */
+/* Toggle button for mobile */
 .nav-toggle {
   display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .nav-toggle span {
@@ -73,35 +73,17 @@
   transition: 0.4s ease;
 }
 
-/* Overlay for dimming background */
-.menu-overlay {
+/* Overlay (hidden by default) */
+.nav-overlay {
   display: none;
 }
 
-.menu-overlay.active {
-  display: block;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1500;
-  animation: fadeIn 0.3s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Mobile Menu */
 @media (max-width: 900px) {
+  /* Mobile Menu */
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     height: 100vh;
     width: 75%;
     background: var(--primary-color);
@@ -109,9 +91,10 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    transition: right 0.4s ease, opacity 0.4s ease;
-    z-index: 2000;
+    transform: translateX(100%);
     opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+    z-index: 2000;
   }
 
   .nav-links a {
@@ -120,29 +103,53 @@
   }
 
   .nav-links.active {
-    right: 0;
+    transform: translateX(0);
     opacity: 1;
   }
 
-  /* Fixed toggle in mobile view */
+  /* Toggle button */
   .nav-toggle {
     display: flex;
-    position: fixed;
+    /* position: fixed; */
     top: 1rem;
-    right: 1.5rem;
+    right: 2rem;
     z-index: 5000;
+  }
+
+  .nav-toggle span {
+    background: var(--primary-color); /* Visible against dark background */
   }
 
   /* Hamburger to X animation */
   .nav-toggle.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-    background: white;
+    transform: translateY(9px) rotate(45deg);
+    background: var(--secondary-color);
   }
   .nav-toggle.active span:nth-child(2) {
     opacity: 0;
   }
   .nav-toggle.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-    background: white;
+    background: var(--secondary-color);
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* Overlay behind menu */
+  .nav-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    z-index: 1500;
+  }
+
+  .nav-overlay.active {
+    opacity: 1;
+    pointer-events: all;
   }
 }
