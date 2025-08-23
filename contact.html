@@ -3,46 +3,189 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yogit Global Import Export LLP</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <title>Contact Us - Yogit Global Import Export LLP</title>
+    <link rel="stylesheet" href="css/pages/contact.css" />
+    <link rel="icon" type="image/png" href="assets/img/logo/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   </head>
   <body>
+    <!-- Navbar -->
     <header>
-      <nav>
-        <div>
-          <ul class="navbar-container">
-            <li class="navlinks">
-              <img
-                id="logo"
-                src="/assets/img/logo/logo-2.png"
-                alt="Yogit Global EXIM LLP"
-              />
-            </li>
-            <li>
-              <a href="/index.html"><span>Home</span></a>
-            </li>
-
-            <li>
-              <a href="/about-us.html"><span>About Us</span></a>
-            </li>
-            <li>
-              <a href="/products.html"><span>Products</span></a>
-            </li>
-            <li>
-              <a href="/certificates.html"><span>Certificates</span></a>
-            </li>
-            <li>
-              <a href="/gallery.html"><span>Gallery</span></a>
-            </li>
-            <li>
-              <a href="/blog.html"><span>Blogs</span></a>
-            </li>
-            <li>
-              <a href="/contact.html"><span>Contact Us</span></a>
-            </li>
-          </ul>
+      <nav class="navbar">
+        <a href="index.html" class="logo-link">
+          <img
+            src="assets/img/logo/logo-new-short.png"
+            alt="Yogit NextGen Trade Solutions LLP"
+            loading="lazy"
+          />
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about-us.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="certificates.html">Certificates</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blog.html">Blogs</a>
+          <a href="contact.html" class="active">Contact Us</a>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <span></span><span></span><span></span>
         </div>
       </nav>
     </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section" data-aos="fade-up">
+      <div class="contact-container">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h2>Contact Information</h2>
+          <p>
+            <i class="fas fa-envelope"></i> Email:
+            <a href="mailto:info@yogitglobal.com">info@yogitglobal.com</a>
+          </p>
+          <p>
+            <i class="fas fa-phone"></i> Phone:
+            <a href="tel:+919876543210">+91 98765 43210</a>
+          </p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Address: Mumbai, Maharashtra,
+            India
+          </p>
+        </div>
+
+        <!-- Contact Form -->
+        <form id="contactForm" class="contact-form" novalidate>
+          <h2>Send Us a Message</h2>
+          <div class="form-group">
+            <label for="name">Full Name*</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your full name"
+              required
+            />
+            <small class="error-msg"></small>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address*</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+            <small class="error-msg"></small>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number*</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Enter your phone number"
+              required
+            />
+            <small class="error-msg"></small>
+          </div>
+          <div class="form-group">
+            <label for="inquiry">Inquiry Type*</label>
+            <select id="inquiry" name="inquiry" required>
+              <option value="">Select Inquiry Type</option>
+              <option value="Export Order">Export Order</option>
+              <option value="Bulk Purchase">Bulk Purchase</option>
+              <option value="Partnership">Partnership</option>
+              <option value="General Inquiry">General Inquiry</option>
+            </select>
+            <small class="error-msg"></small>
+          </div>
+          <div class="form-group">
+            <label for="country">Country*</label>
+            <input
+              type="text"
+              id="country"
+              name="country"
+              placeholder="Enter your country"
+              required
+            />
+            <small class="error-msg"></small>
+          </div>
+          <div class="form-group">
+            <label for="message">Message*</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Write your message"
+              required
+            ></textarea>
+            <small class="error-msg"></small>
+          </div>
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Google Map -->
+    <section class="map-section" data-aos="fade-up">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.7417638387027!2d72.87765581525891!3d19.075983387080088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c63097a4adf7%3A0xbaa3bce7cf4cb3!2sMumbai%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1692256675304!5m2!1sen!2sin"
+        width="100%"
+        height="400"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      >
+      </iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer" data-aos="fade-up">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <img
+            src="assets/img/logo/logo-new.png"
+            alt="Yogit NextGen Trade Solutions LLP"
+          />
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="certificates.html">Certificates</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-divider-line"></div>
+        <p>&copy; 2025 Yogit Global Import Export LLP. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/contact.js"></script>
   </body>
 </html>
