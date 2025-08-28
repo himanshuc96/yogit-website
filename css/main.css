@@ -1,17 +1,438 @@
-/* main.css — Homepage */
+/* ----------------- Font Imports ----------------- */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@400;500;600&family=Raleway:wght@400;500&display=swap");
 
-/* 1. Base reset & font settings */
-@import url("/css/base/fonts-reset.css");
+/* ----------------- Color Variables ----------------- */
+:root {
+  --dark-green: #386641; /* Trust, stability, navbar, footer, text */
+  --fresh-green: #6a994e; /* Headings, highlight sections */
+  --lime-green: #a7c957; /* Hover, accents */
+  --cream: #f2e8cf; /* Background, navbar links, card bg */
+  --spice-red: #bc4749; /* CTA, highlights, spice identity */
 
-/* 2. Global reusable components */
-@import url("/css/components/buttons.css");
+  --linked-in-color: #0077b5; /* LinkedIn color */
+  --facebook-color: #3b5998; /* Facebook color */
+  --twitter-color: #000000; /* Twitter color */
+  --instagram-color: linear-gradient(
+    115deg,
+    #f9ce34,
+    #ee2a7b,
+    #6228d7
+  ); /* Instagram color */
+  --youtube-color: #ff0000; /* YouTube color */
+  --whatsapp-color: #25d366; /* WhatsApp color */
+}
 
-/* 3. Global layout components */
-@import url("/css/layout/navbar.css");
-@import url("/css/layout/footer.css");
+/* ----------------- Reset ----------------- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-/* 4. Homepage desktop-first styles */
-@import url("/css/pages/home.css");
+body {
+  font-family: "Lato", sans-serif;
+  background: var(--cream);
+  color: var(--spice-red);
+  font-size: 16px;
+}
 
-/* 5. Homepage responsive styles (mobile/tablet) */
-@import url("/css/responsive/home-responsive.css");
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
+  font-family: "Raleway", sans-serif;
+  line-height: 1.6;
+}
+
+a,
+.btn,
+.btn-outline,
+.btn-about {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Headings */
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.text-dark {
+  color: var(--spice-red);
+}
+
+.text-light {
+  color: var(--lime-green);
+}
+
+/* Buttons */
+
+.btn {
+  background: var(--spice-red);
+  color: var(--cream);
+  padding: 0.8rem 1.8rem;
+  text-decoration: none;
+  border: 2px solid var(--spice-red);
+  font-weight: bold;
+  transition: 0.3s;
+  display: inline-block;
+  /* border-radius: 10% 0 10% 10%; */
+  text-wrap: nowrap; /* Prevent text from wrapping */
+  width: fit-content; /* Default: fixed width for large screens */
+  text-align: center; /* Keep text centered */
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--cream);
+  border: 2px solid var(--cream);
+}
+
+/* Outline button */
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--spice-red);
+  color: var(--cream);
+  padding: 0.8rem 1.8rem;
+}
+
+.btn-outline:hover {
+  background: transparent;
+  color: var(--lime-green);
+  border: 2px solid var(--lime-green);
+}
+
+/* About button */
+.btn-about {
+  background: var(--spice-red);
+  color: var(--cream);
+  padding: 0.8rem 1.8rem;
+  border: 2px solid var(--spice-red);
+  font-weight: bold;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.btn-about:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* Product section */
+
+.view-all-btn .btn:hover {
+  background: transparent;
+  color: var(--spice-red);
+  border: 2px solid var(--spice-red);
+}
+
+/* Buttons Group (Hero & Footer) */
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.cta-buttons .btn {
+  flex: 0 0 auto; /* Don't grow/shrink in flex unless we set it */
+}
+
+/* Responsive: Shrink to fit content on small screens */
+@media (max-width: 600px) {
+  .btn {
+    width: fit-content;
+    min-width: auto; /* Allow smaller than 150px */
+  }
+}
+
+/* ----------------- Modern Navbar ----------------- */
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: var(--spice-red);
+  /* opacity: 0.8; */
+  padding: 0.5rem 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: padding 0.3s ease, background 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.shrink {
+  padding: 0.5rem 2rem;
+}
+
+.navbar .logo-link img {
+  width: 250px;
+}
+
+/* Nav links desktop */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  opacity: 1;
+}
+
+.nav-links a:hover {
+  color: var(--lime-green);
+}
+
+/* Hover underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--lime-green);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Toggle button for mobile */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  align-items: flex-end;
+}
+
+.nav-toggle span {
+  width: 26px;
+  height: 4px;
+  background: var(--cream);
+  border-radius: 2px;
+  transition: 0.4s ease;
+}
+
+/* Overlay (hidden by default) */
+.nav-overlay {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  /* Mobile Menu */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 75%;
+    background: var(--dark-green);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+    z-index: 2000;
+  }
+
+  .nav-links a {
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* Toggle button */
+  .nav-toggle {
+    display: flex;
+    /* position: fixed; */
+    top: 1rem;
+    right: 2rem;
+    z-index: 5000;
+  }
+
+  .nav-toggle span {
+    background: var(--dark-green); /* Visible against dark background */
+  }
+
+  /* Hamburger to X animation */
+  .nav-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background: var(--cream);
+  }
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.active span:nth-child(3) {
+    background: var(--cream);
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* Overlay behind menu */
+  .nav-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    z-index: 1500;
+  }
+
+  .nav-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--spice-red);
+  color: var(--cream);
+  padding: 2rem 1.5rem 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Brand Logo */
+.footer-brand img {
+  max-width: 180px;
+  height: auto;
+}
+
+/* Section Titles */
+.footer-links h3,
+.footer-social h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: var(--cream);
+}
+
+/* Quick Links */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links ul li a {
+  color: var(--cream);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: var(--lime-green);
+}
+
+/* Social Icons */
+.footer-social .social-icons a {
+  display: inline-block;
+  margin-right: 0.6rem;
+  font-size: 1.5rem;
+  color: var(--cream);
+  transition: all 0.3s ease;
+}
+
+.footer-social .social-icons a:hover {
+  transform: scale(1.5);
+}
+
+.footer-social .social-icons a:nth-child(1) {
+  color: var(--linked-in-color);
+}
+.footer-social .social-icons a:nth-child(2) {
+  background: var(--instagram-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.footer-social .social-icons a:nth-child(3) {
+  color: var(--facebook-color);
+}
+.footer-social .social-icons a:nth-child(4) {
+  color: var(--youtube-color);
+}
+.footer-social .social-icons a:nth-child(5) {
+  color: var(--twitter-color);
+}
+.footer-social .social-icons a:nth-child(6) {
+  color: var(--whatsapp-color);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 1rem;
+  margin-top: 1.5rem;
+  /* border-top: 1px solid var(--primary-color); */
+  font-size: 0.9rem;
+  color: var(--cream);
+}
+
+.footer-bottom .footer-divider-line {
+  width: 80%;
+  height: 1px;
+  background-color: var(--cream);
+  margin-bottom: 1rem;
+  /* margin: 1rem 0; */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-social .social-icons a {
+    margin: 0 0.4rem;
+  }
+}

@@ -1,13 +1,5 @@
 /* 1. Base font reset */
-@import url("/css/components/headings.css");
-@import url("/css/base/fonts-reset.css");
-
-/* 2. Global reusable components */
-@import url("/css/components/buttons.css");
-
-/* 3. Global layout components */
-@import url("/css/layout/navbar.css");
-@import url("/css/layout/footer.css");
+@import url("/css/main.css");
 
 /* Apply consistent left/right spacing to all sections */
 /* section {

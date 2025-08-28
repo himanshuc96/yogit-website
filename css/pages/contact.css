@@ -1,17 +1,9 @@
-/* 1. Base font reset */
-@import url("/css/components/headings.css");
-@import url("/css/base/fonts-reset.css");
-
-/* 2. Global reusable components */
-@import url("/css/components/buttons.css");
-
-/* 3. Global layout components */
-@import url("/css/layout/navbar.css");
-@import url("/css/layout/footer.css");
+@import url("/css/main.css");
 /* 4. Page specific styles */
 
 /* Contact Section */
 .contact-section {
+  margin-top: 4rem;
   padding: 50px 20px;
   background: var(--secondary-color);
 }
@@ -54,10 +46,13 @@
 input,
 textarea,
 select {
+  border: none;
+  outline: none;
   width: 100%;
   padding: 10px;
-  border: 1px solid var(--gray-background);
-  border-radius: 6px;
+  border-bottom: 2px solid var(--spice-red);
+
+  /* border-radius: 6px; */
   font-size: 14px;
 }
 
@@ -75,8 +70,8 @@ select:focus {
 }
 
 .btn-submit {
-  background: var(--primary-color);
-  color: white;
+  background: var(--spice-red);
+  color: var(--cream);
   padding: 12px 20px;
   border: none;
   border-radius: 6px;
@@ -88,24 +83,7 @@ select:focus {
 }
 
 /* Map */
-.map-section iframe {
+/* .map-section iframe {
   border-radius: 12px;
-}
-
-/* Footer */
-.site-footer {
-  background: var(--primary-color);
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links a {
-  color: white;
-  text-decoration: none;
-}
+  padding: 2rem;
+} */

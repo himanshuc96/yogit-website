@@ -1,8 +1,9 @@
+@import url(/css/main.css);
 /* ----------------- Hero ----------------- */
 .hero-banner {
   position: relative;
   height: 100vh;
-  background: url("/assets/img/bg-img/bg-1.png") center/cover no-repeat;
+  background: url("/assets/img/home/bg-img/bg-1.png") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +15,7 @@
   position: relative;
   z-index: 2;
   padding: 2rem;
-  color: var(--secondary-color);
+  color: var(--cream);
 }
 
 .hero-content h1 {
@@ -61,7 +62,7 @@
 
 .about-text {
   padding: 2rem;
-  color: var(--primary-color);
+  color: var(--spice-red);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -129,7 +130,7 @@
 
 .product-card {
   background: var(--secondary-color);
-  border: 2px solid var(--secondary-color);
+  border: 2px solid var(--spice-red);
   color: var(--primary-color);
   border-radius: 16px;
   overflow: hidden;
@@ -160,19 +161,6 @@
 
 .product-card h3 {
   margin: 1rem 0;
-}
-
-.view-all-btn .btn {
-  background: var(--secondary-color);
-  color: var(--primary-color);
-  border: 2px solid var(--secondary-color);
-  font-weight: bold;
-}
-
-.view-all-btn .btn:hover {
-  background: transparent;
-  color: var(--secondary-color);
-  border: 2px solid var(--secondary-color);
 }
 
 /* ----------------- USP Section ----------------- */
@@ -348,4 +336,113 @@
 .cta-footer .btn-outline:hover {
   background-color: var(--secondary-color);
   color: var(--primary-color);
+}
+
+/* Buttons responsive fix */
+@media (max-width: 480px) {
+  .btn,
+  .btn-outline,
+  .btn-about {
+    display: block;
+    width: 90%;
+    max-width: 300px;
+    margin: 0.5rem auto;
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 0.9rem 1.2rem;
+  }
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .about-image {
+    display: none;
+  }
+}
+
+/* Very Small Mobiles (≤393px) */
+@media (max-width: 393px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .about-container,
+  .products-container,
+  .usp-container,
+  .process-timeline,
+  .blog-grid,
+  .footer-container {
+    flex-direction: column !important;
+    display: flex;
+    gap: 1.5rem;
+  }
+}
+
+/* Tablets and Small Laptops (≤1024px) */
+@media (max-width: 1024px) {
+  .about-container,
+  .usp-container,
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .process-timeline {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-image img {
+    width: 80%;
+    max-width: 300px;
+  }
+  .products-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .usp-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .process-timeline {
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+  }
+  .process-step {
+    width: 90%;
+    max-width: 320px;
+  }
+  .about-image {
+    display: none;
+  }
+}
+
+/* Standard Laptops (1025px - 1536px) */
+@media (min-width: 1025px) and (max-width: 1536px) {
+  .about-container,
+  .usp-container,
+  .footer-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .footer-container {
+    gap: 5rem;
+  }
 }
