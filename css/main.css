@@ -3,11 +3,12 @@
 
 /* ----------------- Color Variables ----------------- */
 :root {
-  --dark-green: #386641; /* Trust, stability, navbar, footer, text */
-  --fresh-green: #6a994e; /* Headings, highlight sections */
-  --lime-green: #a7c957; /* Hover, accents */
-  --cream: #f2e8cf; /* Background, navbar links, card bg */
-  --spice-red: #bc4749; /* CTA, highlights, spice identity */
+  /* Color Scheme */
+  --primary-color: #1da6b3; /* Teal: Used for navbar, headings, primary buttons */
+  --secondary-color: #fbca30; /* Gold: Used for accents, icons, and hover highlights */
+  --accent-color: #f57c00; /* Spice Orange: Call-to-action buttons and alerts */
+  --background-color: #fafafa; /* Soft White: Page background for clean design */
+  --text-color: #2c3e50; /* Navy Gray: High contrast text color */
 
   --linked-in-color: #0077b5; /* LinkedIn color */
   --facebook-color: #3b5998; /* Facebook color */
@@ -20,6 +21,15 @@
   ); /* Instagram color */
   --youtube-color: #ff0000; /* YouTube color */
   --whatsapp-color: #25d366; /* WhatsApp color */
+
+  /* Typography */
+  --font-primary: "Poppins", sans-serif; /* For headings and prominent elements */
+  --font-secondary: "Raleway", sans-serif; /* For body text */
+
+  /* Other Base Variables */
+  --base-font-size: 16px; /* Base size for rem conversion */
+  --border-radius: 0.5rem; /* Rounded corners for buttons/cards */
+  --transition-speed: 0.3s; /* Smooth hover animations */
 }
 
 /* ----------------- Reset ----------------- */
@@ -32,8 +42,8 @@
 
 body {
   font-family: "Lato", sans-serif;
-  background: var(--cream);
-  color: var(--spice-red);
+  background: var(--secondary-color);
+  color: var(--primary-color);
   font-size: 16px;
 }
 
@@ -52,9 +62,9 @@ p {
 }
 
 a,
-.btn,
-.btn-outline,
-.btn-about {
+.button,
+.button-outline,
+.button-primary {
   font-family: "Poppins", sans-serif;
 }
 
@@ -70,102 +80,12 @@ h2 {
   margin-bottom: 0.75rem;
 }
 
-.text-dark {
-  color: var(--spice-red);
-}
-
-.text-light {
-  color: var(--lime-green);
-}
-
-/* Buttons */
-
-.btn {
-  background: var(--spice-red);
-  color: var(--cream);
-  padding: 0.8rem 1.8rem;
-  text-decoration: none;
-  border: 2px solid var(--spice-red);
-  font-weight: bold;
-  transition: 0.3s;
-  display: inline-block;
-  /* border-radius: 10% 0 10% 10%; */
-  text-wrap: nowrap; /* Prevent text from wrapping */
-  width: fit-content; /* Default: fixed width for large screens */
-  text-align: center; /* Keep text centered */
-}
-
-.btn:hover {
-  background: transparent;
-  color: var(--cream);
-  border: 2px solid var(--cream);
-}
-
-/* Outline button */
-.btn-outline {
-  background: transparent;
-  border: 2px solid var(--spice-red);
-  color: var(--cream);
-  padding: 0.8rem 1.8rem;
-}
-
-.btn-outline:hover {
-  background: transparent;
-  color: var(--lime-green);
-  border: 2px solid var(--lime-green);
-}
-
-/* About button */
-.btn-about {
-  background: var(--spice-red);
-  color: var(--cream);
-  padding: 0.8rem 1.8rem;
-  border: 2px solid var(--spice-red);
-  font-weight: bold;
-  transition: 0.3s;
-  text-decoration: none;
-}
-
-.btn-about:hover {
-  background: var(--secondary-color);
-  color: var(--primary-color);
-}
-
-/* Product section */
-
-.view-all-btn .btn:hover {
-  background: transparent;
-  color: var(--spice-red);
-  border: 2px solid var(--spice-red);
-}
-
-/* Buttons Group (Hero & Footer) */
-.cta-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-}
-
-.cta-buttons .btn {
-  flex: 0 0 auto; /* Don't grow/shrink in flex unless we set it */
-}
-
-/* Responsive: Shrink to fit content on small screens */
-@media (max-width: 600px) {
-  .btn {
-    width: fit-content;
-    min-width: auto; /* Allow smaller than 150px */
-  }
-}
-
 /* ----------------- Modern Navbar ----------------- */
 .navbar {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background: var(--spice-red);
+  background: var(--primary-color);
   /* opacity: 0.8; */
   padding: 0.5rem 1.5rem;
   position: fixed;
@@ -188,20 +108,24 @@ h2 {
 /* Nav links desktop */
 .nav-links {
   display: flex;
+  text-align: center;
   gap: 2rem;
+  align-items: center;
 }
 
 .nav-links a {
-  color: var(--cream);
+  color: var(--background-color);
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
   position: relative;
+  transition: color 0.3s ease, opacity 0.3s ease;
   opacity: 1;
+  text-wrap: nowrap; /* Prevent text from wrapping */
 }
 
 .nav-links a:hover {
-  color: var(--lime-green);
+  color: var(--accent-color);
 }
 
 /* Hover underline animation */
@@ -232,7 +156,7 @@ h2 {
 .nav-toggle span {
   width: 26px;
   height: 4px;
-  background: var(--cream);
+  background: var(--secondary-color);
   border-radius: 2px;
   transition: 0.4s ease;
 }
@@ -287,13 +211,13 @@ h2 {
   /* Hamburger to X animation */
   .nav-toggle.active span:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
-    background: var(--cream);
+    background: var(--secondary-color);
   }
   .nav-toggle.active span:nth-child(2) {
     opacity: 0;
   }
   .nav-toggle.active span:nth-child(3) {
-    background: var(--cream);
+    background: var(--secondary-color);
     transform: translateY(-9px) rotate(-45deg);
   }
 
@@ -318,10 +242,78 @@ h2 {
   }
 }
 
+/* Buttons */
+
+.button {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: var(--secondary-color);
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: var(--primary-color);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: fit-content;
+}
+
+.button:hover,
+.button:focus {
+  opacity: 0.9;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:active {
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+.button-primary {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+}
+
+.button-outline {
+  background-color: transparent;
+  border: 2px solid var(--background-color);
+  color: var(--background-color);
+}
+
+.cta-buttons {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+/* Cards */
+.card {
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Footer */
 .site-footer {
-  background-color: var(--spice-red);
-  color: var(--cream);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   padding: 2rem 1.5rem 1rem;
   font-family: Arial, sans-serif;
 }
@@ -346,7 +338,7 @@ h2 {
 .footer-social h3 {
   font-size: 1.1rem;
   margin-bottom: 0.8rem;
-  color: var(--cream);
+  color: var(--secondary-color);
 }
 
 /* Quick Links */
@@ -361,7 +353,7 @@ h2 {
 }
 
 .footer-links ul li a {
-  color: var(--cream);
+  color: var(--secondary-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -375,7 +367,7 @@ h2 {
   display: inline-block;
   margin-right: 0.6rem;
   font-size: 1.5rem;
-  color: var(--cream);
+  color: var(--secondary-color);
   transition: all 0.3s ease;
 }
 
@@ -414,13 +406,13 @@ h2 {
   margin-top: 1.5rem;
   /* border-top: 1px solid var(--primary-color); */
   font-size: 0.9rem;
-  color: var(--cream);
+  color: var(--secondary-color);
 }
 
 .footer-bottom .footer-divider-line {
   width: 80%;
   height: 1px;
-  background-color: var(--cream);
+  background-color: var(--secondary-color);
   margin-bottom: 1rem;
   /* margin: 1rem 0; */
 }

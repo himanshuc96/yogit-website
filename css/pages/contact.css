@@ -5,14 +5,20 @@
 .contact-section {
   margin-top: 4rem;
   padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: var(--secondary-color);
 }
 
 .contact-container {
   max-width: 1200px;
   margin: auto;
+  background-color: var(--spice-red);
+  padding: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border-radius: 2rem;
   gap: 30px;
 }
 
@@ -20,17 +26,27 @@
   background: var(--primary-color);
   color: white;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
   border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .contact-info a {
   color: white;
+  text-decoration: none;
+}
+.contact-info a:hover {
   text-decoration: underline;
 }
 
 .contact-form {
   background: #fff;
   padding: 20px;
+  width: 600px;
   border: 1px solid var(--border-color);
   border-radius: 12px;
 }
@@ -87,3 +103,19 @@ select:focus {
   border-radius: 12px;
   padding: 2rem;
 } */
+
+.form-message {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  display: none;
+}
+
+.form-message.success {
+  color: green;
+}
+
+.form-message.error {
+  color: red;
+}

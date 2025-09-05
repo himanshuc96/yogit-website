@@ -21,11 +21,13 @@
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: var(--background-color);
 }
 
 .hero-content p {
   font-size: 1.5rem;
   margin-bottom: 2rem;
+  color: var(--background-color);
 }
 
 .overlay {
@@ -44,6 +46,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  background-color: var(--background-color);
 }
 
 .about-container {
@@ -62,7 +65,7 @@
 
 .about-text {
   padding: 2rem;
-  color: var(--spice-red);
+  color: var(--text-color);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -94,20 +97,15 @@
   text-align: center;
 }
 
-.about-text .btn-about {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.8rem 1.8rem;
-}
-
 /* ----------------- Products ----------------- */
 .featured-products {
-  background: var(--primary-color);
+  background: var(--background-color);
   padding: 4rem 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
-  color: var(--secondary-color);
+  align-items: center;
+  color: var(--text-color);
   gap: 40px;
 }
 
@@ -121,7 +119,7 @@
 }
 
 .products-container {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   max-width: 1000px;
@@ -129,8 +127,8 @@
 }
 
 .product-card {
-  background: var(--secondary-color);
-  border: 2px solid var(--spice-red);
+  background: var(--background-color);
+  border: 2px solid var(--text-color);
   color: var(--primary-color);
   border-radius: 16px;
   overflow: hidden;
@@ -353,7 +351,7 @@
   }
   .cta-buttons {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
   }
   .about-image {
     display: none;
