@@ -307,7 +307,26 @@ h2 {
 
 /* Cards */
 .card {
-  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+  background: var(--background-color);
+  max-width: 250px;
+  border-radius: var(--border-radius);
+  box-shadow: 9px 9px 16px rgba(0, 0, 0, 0.2),
+    -9px -9px 16px rgba(255, 255, 255, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.2) rotate(5deg);
+  background: yellow; /* quick test */
+}
+
+.card img {
+  width: 100%;
+  max-width: 250px;
+}
+
+.card h3 {
+  margin: 1rem 0;
 }
 
 /* Footer */
