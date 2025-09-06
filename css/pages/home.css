@@ -99,24 +99,26 @@
 
 /* ----------------- Products ----------------- */
 .featured-products {
-  background: var(--background-color);
-  padding: 4rem 2rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--text-color);
-  gap: 40px;
+  width: 100%;
+  overflow: hidden; /* keep gallery inside section */
+  padding: 2rem 0;
+}
+
+.section-heading {
+  width: 100%;
+  height: 100%;
 }
 
 .section-heading h2 {
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
+  color: var(--background-color);
 }
 
 .section-heading p {
   margin-bottom: 2rem;
   text-wrap: wrap;
+  color: var(--background-color);
 }
 
 .products-container {
