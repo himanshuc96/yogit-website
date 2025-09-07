@@ -98,10 +98,12 @@
 }
 
 /* ----------------- Products ----------------- */
+/* Featured Products Section */
 .featured-products {
   width: 100%;
-  overflow: hidden; /* keep gallery inside section */
-  padding: 2rem 0;
+  padding: 2rem;
+  box-sizing: border-box;
+  background: var(--background-color);
 }
 
 .section-heading {
@@ -112,13 +114,15 @@
 .section-heading h2 {
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
-  color: var(--background-color);
+  text-align: center;
+  color: var(--text-color);
 }
 
 .section-heading p {
   margin-bottom: 2rem;
   text-wrap: wrap;
-  color: var(--background-color);
+  text-align: center;
+  color: var(--text-color);
 }
 
 .products-container {
