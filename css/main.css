@@ -315,7 +315,7 @@ h2 {
 /* Card Container */
 .card-container {
   display: flex;
-  gap: 1.5rem;
+  gap: 2.5rem;
   justify-content: center; /* center cards horizontally */
   flex-wrap: wrap; /* allow wrapping on smaller screens */
 }
@@ -331,16 +331,16 @@ h2 {
   width: 300px;
   padding: 1rem;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(249, 105, 3, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  border: 1px solid var(--text-color);
+  /* border: 1px solid var(--text-color); */
 }
 
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  border: 3px solid var(--text-color);
+  box-shadow: 0 8px 20px rgba(0, 187, 255, 0.553);
+  /* border: 3px solid var(--text-color); */
 }
 
 /* Card Image */
@@ -386,6 +386,17 @@ h2 {
   font-weight: 600;
   padding-top: 0.5rem;
   color: #666;
+}
+
+.card-container a.card {
+  text-decoration: none; /* remove underline */
+  color: inherit; /* inherit text color */
+  display: block; /* make the whole area clickable */
+}
+
+.card-container a.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Special "View All Products" Card */

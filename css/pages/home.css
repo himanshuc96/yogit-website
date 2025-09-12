@@ -69,8 +69,12 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+}
+
+.about-text a {
+  margin-top: 1rem;
 }
 
 .about-text p {
@@ -102,6 +106,7 @@
 .featured-products {
   width: 100%;
   padding: 2rem;
+
   box-sizing: border-box;
   background: var(--background-color);
 }
@@ -135,37 +140,14 @@
   max-width: 1000px;
   margin: auto;
 }
+fg
+
 /* ----------------- USP Section ----------------- */
 .usp-section {
-  background: var(--secondary-color);
+  background: var(--primary-color);
+  color: var(--secondary-color);
   padding: 4rem 2rem;
   text-align: center;
-  color: var(--primary-color);
-}
-
-.usp-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
-}
-
-.usp-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.usp-icon {
-  width: 80px;
-  height: 80px;
-  border: 2px solid var(--primary-color);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto auto 1rem auto;
-  font-size: 2rem;
 }
 
 /* ----------------- Export Process ----------------- */
