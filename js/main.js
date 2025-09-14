@@ -2,9 +2,9 @@
 // Initialize AOS Animations
 // -------------------------------
 AOS.init({
-  duration: 800,
+  duration: 1000,
   once: true,
-  disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  mirror: false,
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -22,29 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
     menuOverlay.classList.remove("active");
   };
 
-  // Toggle menu on click
   if (navToggle) {
     navToggle.addEventListener("click", () => {
       navLinks.classList.toggle("active");
       navToggle.classList.toggle("active");
       menuOverlay.classList.toggle("active");
     });
-  }
 
-  // Close menu when clicking overlay
-  if (menuOverlay) {
-    menuOverlay.addEventListener("click", closeMenu);
-  }
-
-  // Close menu when clicking a link
-  if (navLinks) {
-    navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", closeMenu);
-    });
-  }
-
-  // Keyboard accessibility for toggle
-  if (navToggle) {
     navToggle.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
@@ -55,7 +39,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Shrink navbar on scroll
+  if (menuOverlay) {
+    menuOverlay.addEventListener("click", closeMenu);
+  }
+
+  if (navLinks) {
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+  }
+
   if (navbar) {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
@@ -74,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const fields = ["name", "email", "phone", "inquiry", "country", "message"];
     const messageBox = document.getElementById("formMessage");
 
-    // Validation function
     const validateField = (id) => {
       const input = document.getElementById(id);
       const error = input.nextElementSibling;
@@ -98,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return valid;
     };
 
-    // Real-time validation
     fields.forEach((id) => {
       const input = document.getElementById(id);
       if (input) {
@@ -106,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // On submit
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       let allValid = fields.every(validateField);
@@ -117,8 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
         messageBox.className = "form-message success";
         messageBox.style.display = "block";
         form.reset();
-
-        // Hide after 5 seconds
         setTimeout(() => {
           messageBox.style.display = "none";
         }, 5000);
