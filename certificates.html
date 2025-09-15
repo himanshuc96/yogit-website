@@ -3,44 +3,96 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yogit Global Import Export LLP</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <title>Certification - Yogit Global Import Export LLP</title>
+    <link rel="stylesheet" href="css/pages/about.css" />
+    <link rel="icon" type="image/png" href="assets/img/logo/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   </head>
   <body>
+    <!-- Navbar -->
     <header>
-      <nav>
-        <div>
-          <ul class="navbar-container">
-            <li class="navlinks">
-              <img
-                id="logo"
-                src="/assets/img/logo/logo-2.png"
-                alt="Yogit Global EXIM LLP"
-              />
-            </li>
-            <li><a href="/index.html"><span>Home</span></a></li>
+      <nav class="navbar" role="navigation">
+        <a href="index.html" class="logo-link">
+          <img
+            id="logo"
+            src="assets/img/logo/logo-new-short.png"
+            alt="Yogit NextGen Trade Solutions LLP"
+            loading="lazy"
+          />
+        </a>
 
-            <li>
-              <a href="/about-us.html"><span>About Us</span></a>
-            </li>
-            <li>
-              <a href="/products.html"><span>Products</span></a>
-            </li>
-            <li>
-              <a href="/certificates.html"><span>Certificates</span></a>
-            </li>
-            <li>
-              <a href="/gallery.html"><span>Gallery</span></a>
-            </li>
-            <li>
-              <a href="/blog.html"><span>Blogs</span></a>
-            </li>
-            <li>
-              <a href="/contact.html"><span>Contact Us</span></a>
-            </li>
-          </ul>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about-us.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="certificates.html">Certificates</a>
+          <a href="gallery.html">Gallery</a>
+          <button
+            onclick="window.location.href='contact.html'"
+            class="button button-primary"
+          >
+            Contact Us
+          </button>
+        </div>
+
+        <div
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Toggle navigation menu"
+        >
+          <span></span><span></span><span></span>
         </div>
       </nav>
     </header>
+    <!-- Footer -->
+    <footer class="site-footer" data-aos="fade-up">
+      <div class="footer-container">
+        <div class="footer-brand" data-aos="fade-up">
+          <img
+            src="assets/img/logo/logo-new.png"
+            alt="Yogit NextGen Trade Solutions LLP"
+          />
+        </div>
+        <div class="footer-links" data-aos="fade-up" data-aos-delay="150">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="certificates.html">Certificates</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social" data-aos="fade-up" data-aos-delay="300">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom" data-aos="fade-up" data-aos-delay="400">
+        <div class="footer-divider-line"></div>
+        <p>
+          &copy; 2025 Yogit NextGen Trade Solutions LLP. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
   </body>
 </html>
