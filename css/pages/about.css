@@ -234,7 +234,7 @@
 .mvv-3d-section .mvv-text p {
   /* max-width: 600px; */
   font-size: 1.1rem;
-  line-height: 1.6;
+  line-height: 1;
   color: var(--text-color);
   /* transform: rotateX(20deg) skewY(-10deg); */
 }

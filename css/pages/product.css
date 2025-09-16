@@ -1,0 +1,69 @@
+@import url("/css/main.css");
+
+.product-page {
+  font-family: "Poppins", sans-serif;
+  padding: 40px 20px;
+  background-color: #fff8f0;
+}
+
+.product-page h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.product-page p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.tabs {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tab-button {
+  background: #fff;
+  border: 2px solid #f39c12;
+  color: #f39c12;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.tab-button.active,
+.tab-button:hover {
+  background: #f39c12;
+  color: #fff;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.spice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.spice-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.spice-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
