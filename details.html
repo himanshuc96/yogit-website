@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spice Details - Yogit Global Import Export LLP</title>
+    <link rel="stylesheet" href="css/pages/product.css" />
+    <link rel="icon" type="image/png" href="assets/img/logo/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="logo-link">
+          <img
+            id="logo"
+            src="assets/img/logo/logo-new-short.png"
+            alt="Yogit Global Import Export LLP"
+          />
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about-us.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="certificates.html">Certificates</a>
+          <a href="gallery.html">Gallery</a>
+          <button
+            onclick="window.location.href='contact.html'"
+            class="button button-primary"
+          >
+            Contact Us
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Spice Details Section -->
+    <main>
+      <section class="spice-details-page">
+        <div class="container" id="spice-details" data-aos="fade-up">
+          <p>Loading spice details...</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" data-aos="fade-up">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <img
+            src="assets/img/logo/logo-new.png"
+            alt="Yogit Global Import Export LLP"
+          />
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+
+      // Get spice ID from query string
+      const urlParams = new URLSearchParams(window.location.search);
+      const spiceId = urlParams.get("spice");
+
+      // Fetch spice details from mock API
+      fetch("api/spices.json")
+        .then((res) => res.json())
+        .then((data) => {
+          const spice = data[spiceId];
+          const container = document.getElementById("spice-details");
+
+          if (!spice) {
+            container.innerHTML = `<p>Spice details not found.</p>`;
+            return;
+          }
+
+          container.innerHTML = `
+          <div class="spice-card-detail">
+            <img src="${spice.image}" alt="${spice.name}" />
+            <h1>${spice.name}</h1>
+            <p><strong>Description:</strong> ${spice.description}</p>
+            <p><strong>Uses:</strong> ${spice.uses}</p>
+            <p><strong>Category:</strong> ${spice.category}</p>
+            <button onclick="window.history.back()">Back to Products</button>
+          </div>
+        `;
+        })
+        .catch((err) => {
+          document.getElementById(
+            "spice-details"
+          ).innerHTML = `<p>Error loading spice details.</p>`;
+          console.error(err);
+        });
+    </script>
+  </body>
+</html>

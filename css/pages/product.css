@@ -4,6 +4,10 @@
   font-family: "Poppins", sans-serif;
   padding: 40px 20px;
   background-color: #fff8f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-page h1 {
@@ -17,9 +21,33 @@
   color: #555;
 }
 
+.search-bar {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 60%;
+  max-width: 400px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #f39c12;
+  border-radius: 25px;
+  transition: border-color 0.3s;
+}
+
+.search-bar input:focus {
+  border-color: #e67e22;
+  outline: none;
+}
+
 .tabs {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .tab-button {
@@ -27,43 +55,125 @@
   border: 2px solid #f39c12;
   color: #f39c12;
   padding: 10px 20px;
-  margin: 0 10px;
+  margin: 0 5px;
   cursor: pointer;
   border-radius: 25px;
-  transition: 0.3s;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+  font-weight: 500;
 }
 
 .tab-button.active,
 .tab-button:hover {
   background: #f39c12;
   color: #fff;
+  transform: scale(1.05);
 }
 
 .tab-content {
   display: none;
+  position: relative;
+  width: 100%;
 }
 
 .tab-content.active {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .spice-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 20px;
+  max-width: 1200px;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  border: 2px solid red;
 }
 
 .spice-card {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 12px;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+  opacity: 1;
+}
+
+.spice-card h3 {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.spice-card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.spice-card.hide {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
 }
 
 .spice-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.spice-card img {
+  max-width: 100%;
+  /* height: 150px; */
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.spice-card button {
+  background: #f39c12;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.no-results {
+  text-align: center;
+  color: #888;
+  margin-top: 20px;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .search-bar input {
+    width: 90%;
+  }
+
+  .tabs {
+    display: flex;
+    overflow-x: auto;
+    padding: 0 10px;
+  }
+
+  .tab-button {
+    flex: 1 0 auto;
+    margin: 5px;
+    white-space: nowrap;
+  }
+
+  .spice-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .spice-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+  }
 }

@@ -10,7 +10,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   </head>
   <body>
@@ -21,11 +20,10 @@
           <img
             id="logo"
             src="assets/img/logo/logo-new-short.png"
-            alt="Yogit NextGen Trade Solutions LLP"
+            alt="Yogit Global Import Export LLP"
             loading="lazy"
           />
         </a>
-
         <div class="nav-links">
           <a href="index.html">Home</a>
           <a href="about-us.html">About Us</a>
@@ -39,7 +37,6 @@
             Contact Us
           </button>
         </div>
-
         <div
           class="nav-toggle"
           id="nav-toggle"
@@ -49,17 +46,27 @@
         </div>
       </nav>
     </header>
+
     <main>
       <section class="product-page">
         <div class="container">
-          <h1>Our Premium Spices</h1>
-          <p>
+          <h1 data-aos="fade-down">Our Premium Spices</h1>
+          <p data-aos="fade-down" data-aos-delay="100">
             Explore our range of authentic spices sourced from trusted
-            manufacturers, perfect for home cooking and bulk orders.
+            manufacturers.
           </p>
 
+          <!-- Search Bar -->
+          <div class="search-bar" data-aos="fade-up" data-aos-delay="200">
+            <input
+              type="text"
+              id="spice-search"
+              placeholder="Search for spices..."
+            />
+          </div>
+
           <!-- Tabs Navigation -->
-          <div class="tabs">
+          <div class="tabs" data-aos="fade-up" data-aos-delay="300">
             <button class="tab-button active" data-tab="whole">
               Whole Spices
             </button>
@@ -69,79 +76,607 @@
             <button class="tab-button" data-tab="blends">Mixed Blends</button>
           </div>
 
-          <!-- Whole Spices -->
+          <!-- Tab Contents -->
           <div class="tab-content active" id="whole">
             <h2>Whole Spices</h2>
             <div class="spice-grid">
-              <div class="spice-card">Black Pepper</div>
-              <div class="spice-card">Small Cardamom</div>
-              <div class="spice-card">Large Cardamom</div>
-              <div class="spice-card">Cumin Seeds</div>
-              <div class="spice-card">Coriander Seeds</div>
-              <div class="spice-card">Fennel Seeds</div>
-              <div class="spice-card">Fenugreek Seeds</div>
-              <div class="spice-card">Mustard Seeds</div>
-              <div class="spice-card">Cloves</div>
-              <div class="spice-card">Cinnamon Sticks</div>
-              <div class="spice-card">Dried Red Chillies</div>
-              <div class="spice-card">Dried Ginger</div>
-              <div class="spice-card">Turmeric Fingers</div>
-              <div class="spice-card">Nutmeg</div>
+              <div class="spice-card" data-id="black-pepper">
+                <img
+                  src="assets/img/spices/black-pepper.jpg"
+                  alt="Black Pepper"
+                />
+                <h3>Black Pepper</h3>
+                <p>Pungent spice that adds heat and flavor to dishes.</p>
+                <p>
+                  <strong>Why it's used:</strong> Enhances flavor, aids
+                  digestion.
+                </p>
+                <button onclick="goToDetails('black-pepper')">Know More</button>
+              </div>
+              <div class="spice-card" data-id="small-cardamom">
+                <img
+                  src="assets/img/spices/small-cardamom.jpg"
+                  alt="Small Cardamom"
+                />
+                <h3>Small Cardamom</h3>
+                <p>Aromatic spice with a sweet and spicy flavor.</p>
+                <p>
+                  <strong>Why it's used:</strong> Adds fragrance to desserts and
+                  curries.
+                </p>
+                <button onclick="goToDetails('small-cardamom')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="large-cardamom">
+                <img
+                  src="assets/img/spices/large-cardamom.jpg"
+                  alt="Large Cardamom"
+                />
+                <h3>Large Cardamom</h3>
+                <p>Smoky aroma, slightly sweet flavor.</p>
+                <p>
+                  <strong>Why it's used:</strong> Flavoring tea, desserts,
+                  curries.
+                </p>
+                <button onclick="goToDetails('large-cardamom')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="cumin-seeds">
+                <img
+                  src="assets/img/spices/cumin-seeds.jpg"
+                  alt="Cumin Seeds"
+                />
+                <h3>Cumin Seeds</h3>
+                <p>Earthy spice with warm aroma.</p>
+                <p>
+                  <strong>Why it's used:</strong> Flavoring curries and rice
+                  dishes.
+                </p>
+                <button onclick="goToDetails('cumin-seeds')">Know More</button>
+              </div>
+              <div class="spice-card" data-id="coriander-seeds">
+                <img
+                  src="assets/img/spices/coriander-seeds.jpg"
+                  alt="Coriander Seeds"
+                />
+                <h3>Coriander Seeds</h3>
+                <p>Mild, citrus-like aroma and flavor.</p>
+                <p>
+                  <strong>Why it's used:</strong> Seasoning curries, pickles,
+                  breads.
+                </p>
+                <button onclick="goToDetails('coriander-seeds')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="fennel-seeds">
+                <img
+                  src="assets/img/spices/fennel-seeds.jpg"
+                  alt="Fennel Seeds"
+                />
+                <h3>Fennel Seeds</h3>
+                <p>Sweet and licorice-like flavor.</p>
+                <p>
+                  <strong>Why it's used:</strong> Digestive aid, flavoring
+                  curries and sweets.
+                </p>
+                <button onclick="goToDetails('fennel-seeds')">Know More</button>
+              </div>
+              <div class="spice-card" data-id="fenugreek-seeds">
+                <img
+                  src="assets/img/spices/fenugreek-seeds.jpg"
+                  alt="Fenugreek Seeds"
+                />
+                <h3>Fenugreek Seeds</h3>
+                <p>Bitter and aromatic seeds.</p>
+                <p>
+                  <strong>Why it's used:</strong> Flavoring curries and pickles.
+                </p>
+                <button onclick="goToDetails('fenugreek-seeds')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="mustard-seeds">
+                <img
+                  src="assets/img/spices/mustard-seeds.jpg"
+                  alt="Mustard Seeds"
+                />
+                <h3>Mustard Seeds</h3>
+                <p>Pungent, sharp spice.</p>
+                <p>
+                  <strong>Why it's used:</strong> Tempering curries, pickles.
+                </p>
+                <button onclick="goToDetails('mustard-seeds')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="cloves">
+                <img src="assets/img/spices/cloves.jpg" alt="Cloves" />
+                <h3>Cloves</h3>
+                <p>Warm, sweet and aromatic.</p>
+                <p>
+                  <strong>Why it's used:</strong> Flavoring desserts, curries,
+                  beverages.
+                </p>
+                <button onclick="goToDetails('cloves')">Know More</button>
+              </div>
+              <div class="spice-card" data-id="cinnamon-sticks">
+                <img
+                  src="assets/img/spices/cinnamon-sticks.jpg"
+                  alt="Cinnamon Sticks"
+                />
+                <h3>Cinnamon Sticks</h3>
+                <p>Sweet and woody aroma.</p>
+                <p><strong>Why it's used:</strong> Baking, teas, curries.</p>
+                <button onclick="goToDetails('cinnamon-sticks')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="dried-red-chillies">
+                <img
+                  src="assets/img/products/whole-spice.png"
+                  alt="Dried Red Chillies"
+                />
+                <h3>Dried Red Chillies</h3>
+                <p>Hot and spicy flavor.</p>
+                <p>
+                  <strong>Why it's used:</strong> Adds heat to curries and
+                  sauces.
+                </p>
+                <button onclick="goToDetails('dried-red-chillies')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="dried-ginger">
+                <img
+                  src="assets/img/spices/dried-ginger.jpg"
+                  alt="Dried Ginger"
+                />
+                <h3>Dried Ginger</h3>
+                <p>Sharp, pungent and aromatic.</p>
+                <p>
+                  <strong>Why it's used:</strong> Flavoring curries, teas, baked
+                  goods.
+                </p>
+                <button onclick="goToDetails('dried-ginger')">Know More</button>
+              </div>
+              <div class="spice-card" data-id="turmeric-fingers">
+                <img
+                  src="assets/img/spices/turmeric-fingers.jpg"
+                  alt="Turmeric Fingers"
+                />
+                <h3>Turmeric Fingers</h3>
+                <p>Earthy, slightly bitter flavor.</p>
+                <p>
+                  <strong>Why it's used:</strong> Color, flavor, and medicinal
+                  properties.
+                </p>
+                <button onclick="goToDetails('turmeric-fingers')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="nutmeg">
+                <img src="assets/img/spices/nutmeg.jpg" alt="Nutmeg" />
+                <h3>Nutmeg</h3>
+                <p>Sweet, warm spice.</p>
+                <p>
+                  <strong>Why it's used:</strong> Baking, desserts, curries.
+                </p>
+                <button onclick="goToDetails('nutmeg')">Know More</button>
+              </div>
             </div>
+            <p class="no-results">No results found.</p>
           </div>
 
           <!-- Powdered Spices -->
           <div class="tab-content" id="powder">
             <h2>Powdered Spices</h2>
             <div class="spice-grid">
-              <div class="spice-card">Chilli Powder</div>
-              <div class="spice-card">Turmeric Powder</div>
-              <div class="spice-card">Coriander Powder</div>
-              <div class="spice-card">Cumin Powder</div>
-              <div class="spice-card">Black Pepper Powder</div>
-              <div class="spice-card">Ginger Powder</div>
-              <div class="spice-card">Fenugreek Powder</div>
-              <div class="spice-card">Fennel Powder</div>
-              <div class="spice-card">Cardamom Powder</div>
-              <div class="spice-card">Garlic Powder</div>
-              <div class="spice-card">Aniseed Powder</div>
-              <div class="spice-card">Ajwain Powder</div>
-              <div class="spice-card">Mustard Powder</div>
-              <div class="spice-card">Onion Powder</div>
+              <div class="spice-card" data-id="chilli-powder">
+                <img
+                  src="assets/img/spices/chilli-powder.jpg"
+                  alt="Chilli Powder"
+                />
+                <h3>Chilli Powder</h3>
+                <p>Fiery powder that intensifies heat.</p>
+                <p>
+                  <strong>Why it's used:</strong> Adds spice and vibrant color.
+                </p>
+                <button onclick="goToDetails('chilli-powder')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="turmeric-powder">
+                <img
+                  src="assets/img/spices/turmeric-powder.jpg"
+                  alt="Turmeric Powder"
+                />
+                <h3>Turmeric Powder</h3>
+                <p>Bright yellow powder with earthy flavor.</p>
+                <p>
+                  <strong>Why it's used:</strong> Color, flavor, medicinal
+                  properties.
+                </p>
+                <button onclick="goToDetails('turmeric-powder')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="coriander-powder">
+                <img
+                  src="assets/img/spices/coriander-powder.jpg"
+                  alt="Coriander Powder"
+                />
+                <h3>Coriander Powder</h3>
+                <p>Mild citrusy flavor.</p>
+                <p><strong>Why it's used:</strong> Curries, gravies, soups.</p>
+                <button onclick="goToDetails('coriander-powder')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="cumin-powder">
+                <img
+                  src="assets/img/spices/cumin-powder.jpg"
+                  alt="Cumin Powder"
+                />
+                <h3>Cumin Powder</h3>
+                <p>Earthy powder for flavoring.</p>
+                <p><strong>Why it's used:</strong> Curries, rice dishes.</p>
+                <button onclick="goToDetails('cumin-powder')">Know More</button>
+              </div>
+              <div class="spice-card" data-id="black-pepper-powder">
+                <img
+                  src="assets/img/spices/black-pepper-powder.jpg"
+                  alt="Black Pepper Powder"
+                />
+                <h3>Black Pepper Powder</h3>
+                <p>Spicy, pungent powder.</p>
+                <p>
+                  <strong>Why it's used:</strong> Enhances flavor in dishes.
+                </p>
+                <button onclick="goToDetails('black-pepper-powder')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="ginger-powder">
+                <img
+                  src="assets/img/spices/ginger-powder.jpg"
+                  alt="Ginger Powder"
+                />
+                <h3>Ginger Powder</h3>
+                <p>Warm, pungent powder.</p>
+                <p>
+                  <strong>Why it's used:</strong> Curries, teas, baked goods.
+                </p>
+                <button onclick="goToDetails('ginger-powder')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="fenugreek-powder">
+                <img
+                  src="assets/img/spices/fenugreek-powder.jpg"
+                  alt="Fenugreek Powder"
+                />
+                <h3>Fenugreek Powder</h3>
+                <p>Bitter, aromatic powder.</p>
+                <p><strong>Why it's used:</strong> Curries, pickles.</p>
+                <button onclick="goToDetails('fenugreek-powder')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="fennel-powder">
+                <img
+                  src="assets/img/spices/fennel-powder.jpg"
+                  alt="Fennel Powder"
+                />
+                <h3>Fennel Powder</h3>
+                <p>Sweet, licorice flavor.</p>
+                <p><strong>Why it's used:</strong> Desserts, curries.</p>
+                <button onclick="goToDetails('fennel-powder')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="cardamom-powder">
+                <img
+                  src="assets/img/spices/cardamom-powder.jpg"
+                  alt="Cardamom Powder"
+                />
+                <h3>Cardamom Powder</h3>
+                <p>Aromatic and sweet powder.</p>
+                <p><strong>Why it's used:</strong> Desserts, tea, curries.</p>
+                <button onclick="goToDetails('cardamom-powder')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="garlic-powder">
+                <img
+                  src="assets/img/spices/garlic-powder.jpg"
+                  alt="Garlic Powder"
+                />
+                <h3>Garlic Powder</h3>
+                <p>Pungent, savory powder.</p>
+                <p>
+                  <strong>Why it's used:</strong> Seasoning, curries, sauces.
+                </p>
+                <button onclick="goToDetails('garlic-powder')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="aniseed-powder">
+                <img
+                  src="assets/img/spices/aniseed-powder.jpg"
+                  alt="Aniseed Powder"
+                />
+                <h3>Aniseed Powder</h3>
+                <p>Sweet, licorice aroma.</p>
+                <p>
+                  <strong>Why it's used:</strong> Baking, desserts, spice
+                  blends.
+                </p>
+                <button onclick="goToDetails('aniseed-powder')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="ajwain-powder">
+                <img
+                  src="assets/img/spices/ajwain-powder.jpg"
+                  alt="Ajwain Powder"
+                />
+                <h3>Ajwain Powder</h3>
+                <p>Bitter, pungent powder.</p>
+                <p>
+                  <strong>Why it's used:</strong> Digestive aid, curries,
+                  breads.
+                </p>
+                <button onclick="goToDetails('ajwain-powder')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="mustard-powder">
+                <img
+                  src="assets/img/spices/mustard-powder.jpg"
+                  alt="Mustard Powder"
+                />
+                <h3>Mustard Powder</h3>
+                <p>Pungent, sharp powder.</p>
+                <p>
+                  <strong>Why it's used:</strong> Pickles, sauces, seasoning.
+                </p>
+                <button onclick="goToDetails('mustard-powder')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="onion-powder">
+                <img
+                  src="assets/img/spices/onion-powder.jpg"
+                  alt="Onion Powder"
+                />
+                <h3>Onion Powder</h3>
+                <p>Mild, sweet flavor.</p>
+                <p>
+                  <strong>Why it's used:</strong> Seasoning, gravies, soups.
+                </p>
+                <button onclick="goToDetails('onion-powder')">Know More</button>
+              </div>
             </div>
+            <p class="no-results">No results found.</p>
           </div>
 
           <!-- Mixed Blends -->
           <div class="tab-content" id="blends">
             <h2>Mixed Blends</h2>
             <div class="spice-grid">
-              <div class="spice-card">Garam Masala</div>
-              <div class="spice-card">Chaat Masala</div>
-              <div class="spice-card">Chicken Masala</div>
-              <div class="spice-card">Chana Masala</div>
-              <div class="spice-card">Pav Bhaji Masala</div>
-              <div class="spice-card">Biryani Masala</div>
-              <div class="spice-card">Sambar Powder</div>
-              <div class="spice-card">Rasam Powder</div>
-              <div class="spice-card">Tandoori Masala</div>
-              <div class="spice-card">Fish Masala</div>
-              <div class="spice-card">Meat Masala</div>
-              <div class="spice-card">Kitchen King Masala</div>
-              <div class="spice-card">Chettinad Masala</div>
-              <div class="spice-card">Dabeli Masala</div>
-              <div class="spice-card">Bafat Masala</div>
+              <div class="spice-card" data-id="garam-masala">
+                <img
+                  src="assets/img/spices/garam-masala.jpg"
+                  alt="Garam Masala"
+                />
+                <h3>Garam Masala</h3>
+                <p>Fragrant blend for rich flavors.</p>
+                <p>
+                  <strong>Why it's used:</strong> Enhances aroma in curries and
+                  soups.
+                </p>
+                <button onclick="goToDetails('garam-masala')">Know More</button>
+              </div>
+              <div class="spice-card" data-id="chaat-masala">
+                <img
+                  src="assets/img/spices/chaat-masala.jpg"
+                  alt="Chaat Masala"
+                />
+                <h3>Chaat Masala</h3>
+                <p>Tangy and slightly salty spice mix.</p>
+                <p><strong>Why it's used:</strong> Snacks, salads, fruits.</p>
+                <button onclick="goToDetails('chaat-masala')">Know More</button>
+              </div>
+              <div class="spice-card" data-id="chicken-masala">
+                <img
+                  src="assets/img/spices/chicken-masala.jpg"
+                  alt="Chicken Masala"
+                />
+                <h3>Chicken Masala</h3>
+                <p>Spice blend specifically for chicken dishes.</p>
+                <p><strong>Why it's used:</strong> Enhances meat flavor.</p>
+                <button onclick="goToDetails('chicken-masala')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="chana-masala">
+                <img
+                  src="assets/img/spices/chana-masala.jpg"
+                  alt="Chana Masala"
+                />
+                <h3>Chana Masala</h3>
+                <p>Blended spices for chickpea curries.</p>
+                <p>
+                  <strong>Why it's used:</strong> Adds authentic flavor to chana
+                  dishes.
+                </p>
+                <button onclick="goToDetails('chana-masala')">Know More</button>
+              </div>
+              <div class="spice-card" data-id="pav-bhaji-masala">
+                <img
+                  src="assets/img/spices/pav-bhaji-masala.jpg"
+                  alt="Pav Bhaji Masala"
+                />
+                <h3>Pav Bhaji Masala</h3>
+                <p>Flavorful spice mix for pav bhaji.</p>
+                <p><strong>Why it's used:</strong> Enhances taste and aroma.</p>
+                <button onclick="goToDetails('pav-bhaji-masala')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="biryani-masala">
+                <img
+                  src="assets/img/spices/biryani-masala.jpg"
+                  alt="Biryani Masala"
+                />
+                <h3>Biryani Masala</h3>
+                <p>Complex blend for biryani rice dishes.</p>
+                <p>
+                  <strong>Why it's used:</strong> Adds rich aroma and taste.
+                </p>
+                <button onclick="goToDetails('biryani-masala')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="sambar-powder">
+                <img
+                  src="assets/img/spices/sambar-powder.jpg"
+                  alt="Sambar Powder"
+                />
+                <h3>Sambar Powder</h3>
+                <p>South Indian blend for sambar curries.</p>
+                <p>
+                  <strong>Why it's used:</strong> Adds authentic sambar flavor.
+                </p>
+                <button onclick="goToDetails('sambar-powder')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="rasam-powder">
+                <img
+                  src="assets/img/spices/rasam-powder.jpg"
+                  alt="Rasam Powder"
+                />
+                <h3>Rasam Powder</h3>
+                <p>Spice mix for tangy rasam soup.</p>
+                <p>
+                  <strong>Why it's used:</strong> Flavoring rasam and soups.
+                </p>
+                <button onclick="goToDetails('rasam-powder')">Know More</button>
+              </div>
+              <div class="spice-card" data-id="tandoori-masala">
+                <img
+                  src="assets/img/spices/tandoori-masala.jpg"
+                  alt="Tandoori Masala"
+                />
+                <h3>Tandoori Masala</h3>
+                <p>Spice mix for grilled and roasted dishes.</p>
+                <p>
+                  <strong>Why it's used:</strong> Marination for tandoori
+                  recipes.
+                </p>
+                <button onclick="goToDetails('tandoori-masala')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="fish-masala">
+                <img
+                  src="assets/img/spices/fish-masala.jpg"
+                  alt="Fish Masala"
+                />
+                <h3>Fish Masala</h3>
+                <p>Blended spices perfect for seafood.</p>
+                <p>
+                  <strong>Why it's used:</strong> Enhances fish curry flavor.
+                </p>
+                <button onclick="goToDetails('fish-masala')">Know More</button>
+              </div>
+              <div class="spice-card" data-id="meat-masala">
+                <img
+                  src="assets/img/spices/meat-masala.jpg"
+                  alt="Meat Masala"
+                />
+                <h3>Meat Masala</h3>
+                <p>Spice mix for mutton, chicken, beef dishes.</p>
+                <p>
+                  <strong>Why it's used:</strong> Adds rich flavor to meat
+                  curries.
+                </p>
+                <button onclick="goToDetails('meat-masala')">Know More</button>
+              </div>
+              <div class="spice-card" data-id="kitchen-king-masala">
+                <img
+                  src="assets/img/spices/kitchen-king-masala.jpg"
+                  alt="Kitchen King Masala"
+                />
+                <h3>Kitchen King Masala</h3>
+                <p>Versatile spice blend for all-purpose cooking.</p>
+                <p>
+                  <strong>Why it's used:</strong> Enhances overall flavor of
+                  dishes.
+                </p>
+                <button onclick="goToDetails('kitchen-king-masala')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="chettinad-masala">
+                <img
+                  src="assets/img/spices/chettinad-masala.jpg"
+                  alt="Chettinad Masala"
+                />
+                <h3>Chettinad Masala</h3>
+                <p>South Indian blend for spicy curries.</p>
+                <p>
+                  <strong>Why it's used:</strong> Adds authentic Chettinad
+                  flavor.
+                </p>
+                <button onclick="goToDetails('chettinad-masala')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="dabeli-masala">
+                <img
+                  src="assets/img/spices/dabeli-masala.jpg"
+                  alt="Dabeli Masala"
+                />
+                <h3>Dabeli Masala</h3>
+                <p>Spice mix for street food Dabeli.</p>
+                <p>
+                  <strong>Why it's used:</strong> Adds tangy and sweet flavor.
+                </p>
+                <button onclick="goToDetails('dabeli-masala')">
+                  Know More
+                </button>
+              </div>
+              <div class="spice-card" data-id="bafat-masala">
+                <img
+                  src="assets/img/spices/bafat-masala.jpg"
+                  alt="Bafat Masala"
+                />
+                <h3>Bafat Masala</h3>
+                <p>Goan spice blend for pork dishes.</p>
+                <p>
+                  <strong>Why it's used:</strong> Adds authentic Bafat flavor.
+                </p>
+                <button onclick="goToDetails('bafat-masala')">Know More</button>
+              </div>
             </div>
+            <p class="no-results">No results found.</p>
           </div>
         </div>
       </section>
     </main>
+
     <!-- Footer -->
     <footer class="site-footer" data-aos="fade-up">
       <div class="footer-container">
         <div class="footer-brand" data-aos="fade-up">
           <img
             src="assets/img/logo/logo-new.png"
-            alt="Yogit NextGen Trade Solutions LLP"
+            alt="Yogit Global Import Export LLP"
           />
         </div>
         <div class="footer-links" data-aos="fade-up" data-aos-delay="150">
@@ -168,17 +703,19 @@
           </div>
         </div>
       </div>
-
       <div class="footer-bottom" data-aos="fade-up" data-aos-delay="400">
         <div class="footer-divider-line"></div>
-        <p>
-          &copy; 2025 Yogit NextGen Trade Solutions LLP. All rights reserved.
-        </p>
+        <p>&copy; 2025 Yogit Global Import Export LLP. All rights reserved.</p>
       </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/animations.js"></script>
+    <script src="/js/animations.js"></script>
+    <script>
+      function goToDetails(spiceId) {
+        window.location.href = `details.html?spice=${spiceId}`;
+      }
+    </script>
   </body>
 </html>
